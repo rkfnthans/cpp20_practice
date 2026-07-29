@@ -1,0 +1,25 @@
+
+# macOS
+.DS_Store
+
+# C++ object files
+*.o
+*.obj
+
+# Compiled executables
+main
+practice
+main_app
+practice_app
+*.out
+*.exe
+
+# Build directories
+build/
+cmake-build-*/
+
+# Debug files
+*.dSYM/
+
+# VS Code local settings
+.vscode/
