@@ -107,6 +107,10 @@ A topic is considered complete only when I can modify the code and explain the c
 * [ ] `std::vector`
 * [ ] References and pointers
 * [ ] `const`
+* [x] Basic stream output
+* [x] Basic file input and output
+* [x] Stream-state checking
+* [x] Basic filesystem inspection
 * [ ] Multiple source files
 
 ### Stage 2 — Classes
@@ -171,17 +175,18 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 1 — C++ Fundamentals
 
-**Current topic:** Basic compilation, execution, syntax experiments, and debugging
+**Current topic:** Streams, file input and output, stream error states, and basic filesystem inspection
 
-**Current exercise:** Day 01 completed
+**Current exercise:** Day 02 completed
 
-**Next milestone:** Study variables, initialization, types, and expressions in greater detail
+**Next milestone:** Continue studying variables, initialization, types, and expressions in greater detail
 
 ## Learning Log
 
 ### C++ Fundamentals
 
 - [Day 01 — First C++20 Practice Session](basics/day_01/)
+- [Day 02 — Streams, File I/O, and Filesystem](basics/day_02/)
 
 ## Long-Term Direction
 

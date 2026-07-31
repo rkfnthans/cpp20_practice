@@ -14,6 +14,8 @@ In this stage, I will learn how to:
 - control program flow with conditions and loops,
 - write and call functions,
 - use basic standard-library types,
+- perform basic console, file, and in-memory stream operations,
+- inspect files and directories with `std::filesystem`,
 - understand references, pointers, and `const`,
 - and separate a program into multiple source files.
 
@@ -78,12 +80,17 @@ Records:
 - [ ] References
 - [ ] Pointers
 - [ ] `const`
+- [x] Basic output streams
+- [x] Basic file input and output
+- [x] Stream error-state checking
+- [x] Basic `std::filesystem`
 - [ ] Value and reference parameters
 - [ ] Header and source file separation
 
 ## Learning Log
 
 - [Day 01 — First C++20 Program](day_01/)
+- [Day 02 — Streams, File I/O, and Filesystem](day_02/)
 
 Additional daily records will be added as the study progresses.
 
@@ -96,7 +103,9 @@ The fundamentals stage will be considered complete when I can:
 3. modify a program and predict the result,
 4. diagnose basic compiler and runtime errors,
 5. use functions, standard-library containers, references, pointers, and `const`,
-6. and divide a small program into multiple files.
+6. check stream states before using file input,
+7. inspect basic directory entries with `std::filesystem`,
+8. and divide a small program into multiple files.
 
 ## Next Stage
 
