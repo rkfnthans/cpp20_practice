@@ -12,26 +12,30 @@ The goals of this repository are to:
 * understand the differences between C, Python, and C++,
 * practice writing, compiling, and debugging C++ code,
 * apply each concept through a small program,
-* prepare for the future development of the Living World Engine.
+* build a consistent technical learning record,
+* and prepare for the future development of the Living World Engine.
 
 ## Study Material
 
-* Main book: *필요한 것만 골라 배우는 모던 C++*
+* Main book: *Modern C++: Learn Only What You Need* (*필요한 것만 골라 배우는 모던 C++*)
 * Language standard: C++20
 * Compiler: Apple Clang
 * Development environment: macOS and Visual Studio Code
+* Shell: zsh
 * Version control: Git and GitHub
 
 ## Learning Method
 
-Each study session will contain three files:
+A typical study session may contain the following files:
 
 ```text
-dayXX_topic/
+day_XX_topic/
 ├── README.md
 ├── practice.cpp
 └── main.cpp
 ```
+
+Some sessions may contain only a `README.md` when `practice.cpp` was used as a temporary programming notebook and repeatedly overwritten during the session.
 
 ### `practice.cpp`
 
@@ -43,7 +47,10 @@ It may contain:
 * small syntax experiments,
 * selected textbook exercises,
 * modified values and expressions,
-* comparisons between different C++ behaviors.
+* comparisons between different C++ behaviors,
+* and code written specifically to reproduce an error or warning.
+
+The file may be rewritten several times during one study session. Important examples are preserved separately when they are useful for later review.
 
 ### `main.cpp`
 
@@ -57,7 +64,9 @@ Examples include:
 * a unit converter,
 * a simple simulation,
 * a score calculator,
-* a regional status report.
+* and a regional status report.
+
+A `main.cpp` file is added only when the session includes a meaningful applied program.
 
 ### Daily `README.md`
 
@@ -67,6 +76,7 @@ Each daily README records:
 * what was implemented,
 * mistakes and corrections,
 * differences from C or Python,
+* what I can explain after the session,
 * and the next topic.
 
 ## Learning Process
@@ -75,8 +85,8 @@ Each daily README records:
 Read the relevant section
 → Test the syntax in practice.cpp
 → Complete a selected exercise
-→ Build a small program in main.cpp
-→ Compile and run both files
+→ Build a small program in main.cpp when appropriate
+→ Compile and run the code
 → Record mistakes and corrections
 → Commit and push the results
 ```
@@ -87,7 +97,7 @@ A topic is considered complete only when I can modify the code and explain the c
 
 ### Stage 1 — C++ Fundamentals
 
-* [ ] Compile and run a C++20 program
+* [x] Compile and run a C++20 program
 * [ ] Variables and initialization
 * [ ] Operators and expressions
 * [ ] Conditional statements
@@ -161,25 +171,17 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 1 — C++ Fundamentals
 
-**Current topic:** Repository setup and development environment
+**Current topic:** Basic compilation, execution, syntax experiments, and debugging
 
-**Current exercise:** Not started
+**Current exercise:** Day 01 completed
 
-**Next milestone:** Create the first study folder with `practice.cpp` and `main.cpp`
+**Next milestone:** Study variables, initialization, types, and expressions in greater detail
 
 ## Learning Log
 
-Daily study records will be linked here.
-
-<!-- Example:
-
 ### C++ Fundamentals
 
-- [Day 01 — Variables, Operators, and Expressions](basics/day01_variables_operators/)
-- [Day 02 — Conditional Statements](basics/day02_conditionals/)
-- [Day 03 — Loops](basics/day03_loops/)
-
--->
+- [Day 01 — First C++20 Practice Session](basics/day_01/)
 
 ## Long-Term Direction
 
