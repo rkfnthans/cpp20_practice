@@ -6,29 +6,112 @@
 
 ## Topic
 
-Using C++ streams for file output, reusable output functions, in-memory text storage, file input validation, and basic filesystem inspection.
+Practicing C++ output streams, file input and output, stream-state checking, and basic filesystem inspection.
 
 ## What I Studied
 
 - File output with `std::ofstream`
-- Opening a file directly through a stream constructor
+- Opening a file with `open()`
+- Opening a file directly through the `std::ofstream` constructor
 - Automatic file closing when a stream object leaves scope
-- Manual `open()` and `close()` when explicit control is needed
-- Reusing one function through a `std::ostream&` parameter
+- Manual `open()` and `close()` when direct control is needed
+- Reusing one function with a `std::ostream&` parameter
 - Writing to `std::cout`, `std::ofstream`, and `std::stringstream`
-- Retrieving in-memory text with `stringstream::str()`
+- Retrieving stored text with `stringstream::str()`
 - File input with `std::ifstream`
-- Stream failure states when a file cannot be opened
+- Failed stream states when a file does not exist
 - Checking stream state before reading
 - Directory iteration with `std::filesystem::directory_iterator`
 - Distinguishing regular files from directories
-- Using `pwd`, `ls`, and `&&` during compilation and execution
+- Checking terminal paths with `pwd` and `ls`
+- Running a program only after successful compilation with `&&`
 
-## Code
+## Practice Method
 
-The examples were written one at a time in `practice.cpp`.
+The examples were written and tested one at a time in `practice.cpp`.
 
-The file was repeatedly modified while testing stream output, string streams, failed file input, and filesystem inspection. The final exercise inspected entries in the current directory.
+The file was repeatedly overwritten while moving through the textbook examples. The session focused on understanding the examples, observing compiler and runtime behavior, and recording mistakes and corrections.
+
+A separate `main.cpp` was not created during Day 02 because the available study time was required for the examples themselves. This session therefore remains a practice-focused record rather than an applied mini-project.
+
+## Representative Code
+
+### File output through a constructor
+
+```cpp
+#include <fstream>
+
+int main()
+{
+    std::ofstream square_file{"squares.txt"};
+
+    for (int i = 0; i < 10; ++i)
+        square_file << i << "^2 = " << i * i << '\n';
+}
+```
+
+The constructor opens the file immediately. The stream closes automatically when the object leaves scope.
+
+### Reusing one output function
+
+```cpp
+#include <fstream>
+#include <iostream>
+#include <sstream>
+
+void write_something(std::ostream& os)
+{
+    os << "Hi stream, did you know that 3 * 3 = "
+       << 3 * 3 << '\n';
+}
+
+int main()
+{
+    std::ofstream myfile{"example.txt"};
+    std::stringstream mysstream;
+
+    write_something(std::cout);
+    write_something(myfile);
+    write_something(mysstream);
+
+    std::cout << "mysstream is: " << mysstream.str();
+}
+```
+
+A function taking `std::ostream&` can write to the terminal, a file, or an in-memory string stream.
+
+### Checking failed file input
+
+```cpp
+#include <fstream>
+#include <iostream>
+
+int main()
+{
+    std::ifstream infile{"some_missing_file.xyz"};
+
+    if (!infile)
+    {
+        std::cerr << "Failed to open the file.\n";
+        return 1;
+    }
+
+    int i{};
+    double d{};
+
+    if (!(infile >> i >> d))
+    {
+        std::cerr << "Failed to read valid values.\n";
+        return 1;
+    }
+
+    std::cout << "i is " << i << ", d is " << d << '\n';
+}
+```
+
+A stream object can be constructed even when its file cannot be opened. The stream enters a failed state instead of stopping the program automatically.
+
+### Inspecting the current directory
 
 ```cpp
 #include <filesystem>
@@ -51,29 +134,7 @@ int main()
 }
 ```
 
-Other representative exercises included:
-
-```cpp
-std::ofstream square_file{"squares.txt"};
-```
-
-```cpp
-void write_something(std::ostream& os)
-{
-    os << "Hi stream, did you know that 3 * 3 = "
-       << 3 * 3 << '\n';
-}
-```
-
-```cpp
-std::ifstream infile{"some_missing_file.xyz"};
-
-if (!infile)
-{
-    std::cerr << "Failed to open the file.\n";
-    return 1;
-}
-```
+`directory_iterator(".")` scans the current directory. Source files, text files, Markdown files, and executables are all regular files.
 
 ## Compilation
 
@@ -81,7 +142,7 @@ if (!infile)
 clang++ -std=c++20 -Wall -Wextra -Wpedantic practice.cpp -o practice
 ```
 
-To run the program only after successful compilation:
+To run the program only when compilation succeeds:
 
 ```bash
 clang++ -std=c++20 -Wall -Wextra -Wpedantic practice.cpp -o practice && ./practice
@@ -93,25 +154,23 @@ clang++ -std=c++20 -Wall -Wextra -Wpedantic practice.cpp -o practice && ./practi
 ./practice
 ```
 
-Useful checks before compiling:
+Before compiling, the current directory and files can be checked with:
 
 ```bash
 pwd
 ls
 ```
 
-The filesystem exercise listed entries such as source files, Markdown files, generated text files, and the executable as regular files.
-
 ## What I Changed
 
-- Replaced separate stream construction and `open()` calls with direct constructor initialization.
-- Removed explicit `close()` calls when automatic closing at the end of scope was sufficient.
-- Passed `std::ostream&` to one function so that the same code could write to the terminal, a file, or a string stream.
-- Replaced `int main(int argc, char* argv[])` with `int main()` when command-line arguments were not used.
-- Added checks for failed file opening and failed extraction.
-- Added the `<filesystem>` header.
-- Corrected `std::filesystems` to `std::filesystem`.
-- Used `&&` so that an executable runs only after successful compilation.
+- Opened a file directly through an `std::ofstream` constructor.
+- Learned that explicit `close()` is not always required because the stream closes at the end of its scope.
+- Kept `open()` and `close()` as an option when direct lifetime control is needed.
+- Used one `std::ostream&` function with `std::cout`, `std::ofstream`, and `std::stringstream`.
+- Changed `int main(int argc, char* argv[])` to `int main()` when command-line arguments were not used.
+- Added stream-state checks before reading from a file.
+- Included `<filesystem>` and used `std::filesystem`.
+- Used `&&` to prevent execution after a failed compilation.
 
 ## Mistakes and Corrections
 
@@ -119,32 +178,37 @@ The filesystem exercise listed entries such as source files, Markdown files, gen
 
 The terminal was in the Day 01 directory while the intended source file was in the Day 02 directory.
 
-The compiler processed a different file that did not contain the expected `main()` function.
+The wrong file was compiled, and the linker could not find the expected `main()` function.
+
+```text
+Undefined symbols for architecture arm64:
+  "_main"
+```
 
 ### Correction
 
-I checked the current directory and available files before compiling.
+I checked the current directory and file list before compiling.
 
 ```bash
 pwd
 ls
 ```
 
-I then moved to the correct directory and compiled the intended source file.
+I then moved to the correct Day 02 directory.
 
-### Mistake 2 — Executable Not Found After Compilation Failed
+### Mistake 2 — Tried to Run an Executable That Was Not Created
 
-After the link step failed, I tried to run:
+After compilation failed, I ran:
 
 ```bash
 ./practice
 ```
 
-No new executable had been created.
+The new executable did not exist because the build had failed.
 
 ### Correction
 
-I compiled successfully before running the program and later combined both steps with:
+I compiled successfully first and later connected compilation and execution with `&&`.
 
 ```bash
 clang++ -std=c++20 -Wall -Wextra -Wpedantic practice.cpp -o practice && ./practice
@@ -158,29 +222,29 @@ The program declared command-line parameters but did not use them.
 int main(int argc, char* argv[])
 ```
 
-This produced `-Wunused-parameter` warnings.
+This produced unused-parameter warnings.
 
 ### Correction
 
-I used the simpler form when command-line arguments were unnecessary.
+I used:
 
 ```cpp
 int main()
 ```
 
-### Mistake 4 — Assumed a Missing File Would Stop the Program
+when command-line arguments were unnecessary.
+
+### Mistake 4 — Assumed a Missing File Would Produce an Immediate Error
 
 An `std::ifstream` object was constructed for a file that did not exist.
 
-The object itself was still created, but the stream entered a failed state. The program did not stop automatically.
+The stream object was still created, but it entered a failed state. The program continued running unless the state was checked.
 
 ### Correction
 
-I checked the stream immediately after construction.
+I checked the stream before attempting input.
 
 ```cpp
-std::ifstream infile{"some_missing_file.xyz"};
-
 if (!infile)
 {
     std::cerr << "Failed to open the file.\n";
@@ -188,78 +252,63 @@ if (!infile)
 }
 ```
 
-I also initialized destination variables and checked whether extraction succeeded before using their values.
+I also learned that failed extraction can leave variables unchanged, so input success should be checked before using their values.
 
-```cpp
-int i{};
-double d{};
+### Mistake 5 — Used `std::filesystems`
 
-if (!(infile >> i >> d))
-{
-    std::cerr << "Failed to read valid values.\n";
-    return 1;
-}
-```
-
-The earlier output of `0` and `0` was not proof of successful input. The extraction had failed.
-
-### Mistake 5 — Used the Wrong Filesystem Namespace
-
-I wrote:
+I wrote the namespace name in plural form.
 
 ```cpp
 namespace fs = std::filesystems;
 ```
 
-The correct namespace is singular.
-
 ### Correction
 
-I included the correct header and namespace.
+The correct namespace is:
 
 ```cpp
-#include <filesystem>
-
 namespace fs = std::filesystem;
 ```
 
-### Mistake 6 — Ran an Older Executable After a Compilation Error
+The `<filesystem>` header must also be included.
 
-A failed compilation did not remove the executable created by an earlier successful build.
+### Mistake 6 — Ran an Older Executable After Compilation Failed
 
-Running `./practice` could therefore execute old code and display an unrelated result.
+A failed compilation did not delete the executable from the previous successful build.
+
+Running `./practice` could therefore run older code and display an unrelated result.
 
 ### Correction
 
-I used `&&` so that execution occurs only when the current compilation succeeds.
-
-```bash
-clang++ -std=c++20 -Wall -Wextra -Wpedantic practice.cpp -o practice && ./practice
-```
+I used `&&` so that execution occurs only after the current source file compiles successfully.
 
 ## C or Python Comparison
 
-- C++ uses a common stream interface for terminal output, file output, and in-memory formatted output. Python provides separate objects with similar file-like behavior.
-- A C++ file stream normally closes automatically when its object leaves scope. Python commonly expresses the same lifetime rule with a `with open(...)` context manager.
-- Opening a missing file with Python normally raises `FileNotFoundError`. A default C++ `std::ifstream` instead enters a failed state unless exceptions are explicitly enabled.
-- C++ stream extraction can fail without stopping the program, so the stream state must be checked.
-- `std::filesystem` provides path and directory operations similar to Python's `pathlib` and `os` modules.
+- C++ uses the common `std::ostream` interface for terminal output, file output, and string-stream output.
+- Python also uses file-like objects, but C++ expresses the shared interface through stream inheritance and references.
+- A C++ file stream closes automatically when its object leaves scope. Python commonly uses `with open(...)` for the same resource-lifetime purpose.
+- Opening a missing file in Python normally raises `FileNotFoundError`. A default C++ `std::ifstream` instead enters a failed state unless exceptions are enabled.
+- C++ stream input can fail without stopping the program, so stream states must be checked explicitly.
+- `std::filesystem` provides functionality similar to Python's `pathlib` and `os` modules.
 
 ## What I Can Explain Now
 
-- How `std::ofstream` writes text to a file
-- Why a stream constructor can replace a separate `open()` call
+- How `std::ofstream` writes data to a file
+- The difference between opening a file with `open()` and through a constructor
 - Why file streams close automatically at the end of their scope
-- When explicit `open()` and `close()` calls may still be useful
-- Why a function taking `std::ostream&` can write to different destinations
+- When manual `open()` and `close()` may be useful
+- Why one function taking `std::ostream&` can write to several destinations
 - How `std::stringstream` stores formatted text in memory
-- Why creating an `std::ifstream` object does not guarantee that the file opened successfully
-- How to check file-opening and extraction failures
-- Why failed compilation may leave an older executable in place
-- Why `&&` prevents an old executable from running after a failed build
-- How `std::filesystem::directory_iterator` scans the current directory
-- How regular files and directories are classified
+- Why a constructed `std::ifstream` does not guarantee a successfully opened file
+- How to check failed file opening and failed extraction
+- Why unused `argc` and `argv` parameters produce warnings
+- Why a failed compilation may leave an older executable in the directory
+- Why `&&` is safer for compile-and-run commands
+- How `std::filesystem::directory_iterator` scans a directory
+- How regular files and directories are distinguished
 
 ## Next Topic
 
-Continue studying variables, initialization, types, and expressions in greater detail.
+Continue with the next C++ fundamentals examples.
+
+A separate `main.cpp` will be added when the studied concepts and available time support a meaningful applied program.

@@ -35,7 +35,7 @@ day_XX_topic/
 └── main.cpp
 ```
 
-Some sessions may contain only a `README.md` when `practice.cpp` was used as a temporary programming notebook and repeatedly overwritten during the session.
+Some sessions may contain only `practice.cpp` and a `README.md` when the available study time is used to understand, modify, and debug textbook examples.
 
 ### `practice.cpp`
 
@@ -66,7 +66,7 @@ Examples include:
 * a score calculator,
 * and a regional status report.
 
-A `main.cpp` file is added only when the session includes a meaningful applied program.
+A `main.cpp` file is added only when the session includes enough time and concepts suitable for a meaningful applied program. Completing textbook examples and understanding their behavior takes priority over creating a forced mini-project.
 
 ### Daily `README.md`
 
@@ -107,9 +107,9 @@ A topic is considered complete only when I can modify the code and explain the c
 * [ ] `std::vector`
 * [ ] References and pointers
 * [ ] `const`
-* [x] Basic stream output
+* [x] Basic output streams
 * [x] Basic file input and output
-* [x] Stream-state checking
+* [x] Basic stream-state checking
 * [x] Basic filesystem inspection
 * [ ] Multiple source files
 
@@ -162,7 +162,10 @@ A topic is considered complete only when I can modify the code and explain the c
 cpp20_practice/
 ├── README.md
 ├── .gitignore
-├── basics/
+├── Basics/
+│   ├── README.md
+│   ├── day01_Basic_C++/
+│   └── day02/
 ├── classes/
 ├── stl/
 ├── modern_cpp/
@@ -175,18 +178,18 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 1 — C++ Fundamentals
 
-**Current topic:** Streams, file input and output, stream error states, and basic filesystem inspection
+**Current topic:** Streams, file input and output, stream states, and basic filesystem inspection
 
-**Current exercise:** Day 02 completed
+**Current exercise:** Day 02 completed as a practice-focused session without a separate `main.cpp`
 
-**Next milestone:** Continue studying variables, initialization, types, and expressions in greater detail
+**Next milestone:** Continue the next fundamentals section and create a small applied program only when the studied concepts are ready to be combined meaningfully
 
 ## Learning Log
 
 ### C++ Fundamentals
 
-- [Day 01 — First C++20 Practice Session](basics/day_01/)
-- [Day 02 — Streams, File I/O, and Filesystem](basics/day_02/)
+- [Day 01 — First C++20 Practice Session](Basics/day01_Basic_C++/)
+- [Day 02 — Streams, File I/O, and Filesystem](Basics/day02/)
 
 ## Long-Term Direction
 

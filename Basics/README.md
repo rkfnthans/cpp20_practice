@@ -14,7 +14,8 @@ In this stage, I will learn how to:
 - control program flow with conditions and loops,
 - write and call functions,
 - use basic standard-library types,
-- perform basic console, file, and in-memory stream operations,
+- use console, file, and in-memory streams,
+- check stream states before using input data,
 - inspect files and directories with `std::filesystem`,
 - understand references, pointers, and `const`,
 - and separate a program into multiple source files.
@@ -32,7 +33,7 @@ day_XX/
 └── main.cpp
 ```
 
-Some directories may contain only a `README.md` when the practice file was repeatedly modified during experimentation and no final source file was preserved.
+Some directories may contain only `practice.cpp` and a `README.md` when the session is fully used for textbook examples, syntax experiments, compilation, and debugging.
 
 ### `practice.cpp`
 
@@ -52,7 +53,7 @@ Contains a small applied program built using the concepts studied that day.
 
 The goal is to combine the learned syntax into a program with a clear purpose rather than simply listing isolated examples.
 
-Not every study session requires a `main.cpp`. A main program is added when the studied concepts are suitable for a meaningful applied exercise.
+Not every study session requires a `main.cpp`. It is added only when the studied concepts and available time support a meaningful applied exercise.
 
 ### Daily `README.md`
 
@@ -82,17 +83,25 @@ Records:
 - [ ] `const`
 - [x] Basic output streams
 - [x] Basic file input and output
-- [x] Stream error-state checking
+- [x] Basic stream-state checking
 - [x] Basic `std::filesystem`
 - [ ] Value and reference parameters
 - [ ] Header and source file separation
 
 ## Learning Log
 
-- [Day 01 — First C++20 Program](day_01/)
-- [Day 02 — Streams, File I/O, and Filesystem](day_02/)
+- [Day 01 — First C++20 Program](day01_Basic_C++/)
+- [Day 02 — Streams, File I/O, and Filesystem](day02/)
 
 Additional daily records will be added as the study progresses.
+
+## Current Focus
+
+Day 02 was completed as a practice-focused session.
+
+The session was used to understand and test several stream and filesystem examples. A separate `main.cpp` was not created because the textbook examples, compiler messages, and debugging process required the available study time.
+
+This is consistent with the repository method: understanding and explaining the examples takes priority over creating an applied program before the concepts are ready.
 
 ## Completion Criteria
 
