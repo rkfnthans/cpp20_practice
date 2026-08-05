@@ -8,21 +8,22 @@ I have previous experience with C and Python, but I am currently learning modern
 
 The goals of this repository are to:
 
-* learn modern C++20 step by step,
-* understand the differences between C, Python, and C++,
-* practice writing, compiling, and debugging C++ code,
-* apply each concept through a small program,
-* build a consistent technical learning record,
-* and prepare for the future development of the Living World Engine.
+- learn modern C++20 step by step,
+- understand the differences between C, Python, and C++,
+- practice writing, compiling, and debugging C++ code,
+- apply each concept through small programs,
+- build a consistent technical learning record,
+- and prepare for the future development of the Living World Engine.
 
 ## Study Material
 
-* Main book: *Modern C++: Learn Only What You Need* (*필요한 것만 골라 배우는 모던 C++*)
-* Language standard: C++20
-* Compiler: Apple Clang
-* Development environment: macOS and Visual Studio Code
-* Shell: zsh
-* Version control: Git and GitHub
+- Main book: *Modern C++: Learn Only What You Need* (*필요한 것만 골라 배우는 모던 C++*)
+- Review book: *Do it! C++ Complete Guide*
+- Language standard: C++20
+- Compiler: Apple Clang
+- Development environment: macOS and Visual Studio Code
+- Shell: zsh
+- Version control: Git and GitHub
 
 ## Learning Method
 
@@ -43,12 +44,12 @@ This file is used as a programming notebook.
 
 It may contain:
 
-* examples typed while reading the book,
-* small syntax experiments,
-* selected textbook exercises,
-* modified values and expressions,
-* comparisons between different C++ behaviors,
-* and code written specifically to reproduce an error or warning.
+- examples typed while reading the book,
+- small syntax experiments,
+- selected textbook exercises,
+- modified values and expressions,
+- comparisons between different C++ behaviors,
+- and code written specifically to reproduce an error or warning.
 
 The file may be rewritten several times during one study session. Important examples are preserved separately when they are useful for later review.
 
@@ -56,35 +57,25 @@ The file may be rewritten several times during one study session. Important exam
 
 This file contains a small applied program built using the concepts studied that day.
 
-The program should have a clear purpose rather than simply listing syntax examples.
-
-Examples include:
-
-* a resource calculator,
-* a unit converter,
-* a simple simulation,
-* a score calculator,
-* and a regional status report.
-
 A `main.cpp` file is added only when the session includes enough time and concepts suitable for a meaningful applied program. Completing textbook examples and understanding their behavior takes priority over creating a forced mini-project.
 
 ### Daily `README.md`
 
 Each daily README records:
 
-* the concepts studied,
-* what was implemented,
-* mistakes and corrections,
-* differences from C or Python,
-* what I can explain after the session,
-* and the next topic.
+- the concepts studied,
+- what was implemented,
+- mistakes and corrections,
+- differences from C or Python,
+- what I can explain after the session,
+- and the next topic.
 
 ## Learning Process
 
 ```text
 Read the relevant section
 → Test the syntax in practice.cpp
-→ Complete a selected exercise
+→ Complete selected exercises
 → Build a small program in main.cpp when appropriate
 → Compile and run the code
 → Record mistakes and corrections
@@ -97,64 +88,70 @@ A topic is considered complete only when I can modify the code and explain the c
 
 ### Stage 1 — C++ Fundamentals
 
-* [x] Compile and run a C++20 program
-* [ ] Variables and initialization
-* [ ] Operators and expressions
-* [ ] Conditional statements
-* [ ] Loops
-* [ ] Functions
-* [ ] `std::string`
-* [x] Basic `std::vector`
-* [x] Basic references and pointers
-* [x] Basic `const` parameters
-* [x] Basic output streams
-* [x] Basic file input and output
-* [x] Basic stream-state checking
-* [x] Basic filesystem inspection
-* [ ] Multiple source files
+- [x] Compile and run a C++20 program
+- [ ] Variables and initialization
+- [ ] Operators and expressions
+- [ ] Conditional statements
+- [ ] Loops
+- [x] Basic functions and return values
+- [ ] `std::string`
+- [x] Basic arrays
+- [x] Basic `std::vector`
+- [x] References and reference parameters
+- [x] Basic pointers and dereferencing
+- [x] Arrays and pointers
+- [x] Basic dynamic memory with `new` and `delete`
+- [x] Dynamic arrays with `new[]` and `delete[]`
+- [x] Basic `const` parameters
+- [x] Basic output streams
+- [x] Basic file input and output
+- [x] Basic stream-state checking
+- [x] Basic filesystem inspection
+- [x] Static local variables
+- [ ] Multiple source files
 
 ### Stage 2 — Classes
 
-* [ ] Define a class
-* [ ] Use constructors
-* [ ] Understand `public` and `private`
-* [ ] Write member functions
-* [ ] Write `const` member functions
-* [ ] Store objects in containers
-* [ ] Separate declarations and implementations
-* [ ] Understand basic object lifetime
+- [ ] Define a class
+- [ ] Use constructors
+- [ ] Understand `public` and `private`
+- [ ] Write member functions
+- [ ] Write `const` member functions
+- [ ] Store objects in containers
+- [ ] Separate declarations and implementations
+- [ ] Understand basic object lifetime
 
 ### Stage 3 — Standard Library
 
-* [ ] `std::array`
-* [ ] STL iterators
-* [ ] STL algorithms
-* [ ] `std::map`
-* [ ] `std::unordered_map`
-* [ ] `std::optional`
-* [ ] `std::variant`
-* [ ] Random-number utilities
+- [ ] `std::array`
+- [ ] STL iterators
+- [ ] STL algorithms
+- [ ] `std::map`
+- [ ] `std::unordered_map`
+- [ ] `std::optional`
+- [ ] `std::variant`
+- [ ] Random-number utilities
 
 ### Stage 4 — Modern C++ Foundations
 
-* [ ] Lambda expressions
-* [ ] Basic templates
-* [ ] Copy and move fundamentals
-* [ ] RAII
-* [x] Basic smart-pointer introduction
-* [ ] Error handling
-* [ ] Basic automated testing
-* [ ] CMake
+- [ ] Lambda expressions
+- [ ] Basic templates
+- [ ] Copy and move fundamentals
+- [ ] RAII
+- [x] Basic smart-pointer introduction
+- [ ] Error handling
+- [ ] Basic automated testing
+- [ ] CMake
 
 ### Stage 5 — Mini World Simulation
 
-* [ ] Create a grid-based world
-* [ ] Store resources in each cell
-* [ ] Advance simulation time
-* [ ] Implement resource production and consumption
-* [ ] Implement seasonal changes
-* [ ] Divide the program into multiple files
-* [ ] Add basic tests
+- [ ] Create a grid-based world
+- [ ] Store resources in each cell
+- [ ] Advance simulation time
+- [ ] Implement resource production and consumption
+- [ ] Implement seasonal changes
+- [ ] Divide the program into multiple files
+- [ ] Add basic tests
 
 ## Repository Structure
 
@@ -166,7 +163,8 @@ cpp20_practice/
 │   ├── README.md
 │   ├── day01_Basic_C++/
 │   ├── day02/
-│   └── day03/
+│   ├── day03/
+│   └── day04/
 ├── classes/
 ├── stl/
 ├── modern_cpp/
@@ -179,11 +177,13 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 1 — C++ Fundamentals
 
-**Current topic:** Arrays, dynamic memory, smart pointers, and basic `std::vector` usage
+**Latest completed topic:** Pointer fundamentals, arrays and pointers, dynamic memory, function parameters, references, and static local variables
 
-**Current exercise:** Day 03 completed as a practice-focused session without a separate `main.cpp`
+**Latest session:** Day 04 completed as a review-focused session using *Do it! C++ Complete Guide*
 
-**Next milestone:** Continue practicing containers and references, then combine the concepts in a small applied program when the syntax is sufficiently familiar
+**Review item:** Practice multiple pointers again later through functions and NPC relationship examples
+
+**Next milestone:** Continue the book while applying pointers and references in small exercises instead of stopping the overall progression
 
 ## Learning Log
 
@@ -192,6 +192,7 @@ The structure will be expanded gradually as the study progresses.
 - [Day 01 — First C++20 Practice Session](Basics/day01_Basic_C++/)
 - [Day 02 — Streams, File I/O, and Filesystem](Basics/day02/)
 - [Day 03 — Arrays, Smart Pointers, and std::vector](Basics/day03/)
+- [Day 04 — Pointers, Dynamic Memory, and Function Parameters](Basics/day04/)
 
 ## Long-Term Direction
 

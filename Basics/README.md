@@ -18,7 +18,10 @@ In this stage, I will learn how to:
 - check stream states before using input data,
 - inspect files and directories with `std::filesystem`,
 - understand references, pointers, and `const`,
-- allocate and release basic dynamic arrays,
+- understand the relationship between arrays and pointers,
+- allocate and release dynamic memory,
+- pass arrays and struct arrays to functions,
+- modify original variables through pointers and references,
 - use `std::unique_ptr` and `std::shared_ptr`,
 - pass `std::vector` objects by reference,
 - and separate a program into multiple source files.
@@ -54,8 +57,6 @@ The file may be rewritten several times during a study session.
 
 Contains a small applied program built using the concepts studied that day.
 
-The goal is to combine the learned syntax into a program with a clear purpose rather than simply listing isolated examples.
-
 Not every study session requires a `main.cpp`. It is added only when the studied concepts and available time support a meaningful applied exercise.
 
 ### Daily `README.md`
@@ -77,18 +78,24 @@ Records:
 - [ ] Operators and expressions
 - [ ] Conditional statements
 - [ ] Loops
-- [ ] Functions
+- [x] Basic functions and return values
 - [x] Basic arrays
 - [ ] `std::string`
 - [x] Basic `std::vector`
 - [x] Basic references
 - [x] Basic pointers
+- [x] Arrays and pointers
+- [x] Dynamic memory with `new` and `delete`
+- [x] Dynamic arrays with `new[]` and `delete[]`
+- [x] Passing arrays to functions
+- [x] Passing struct arrays to functions
+- [x] Static local variables
 - [x] Basic `const` parameters
 - [x] Basic output streams
 - [x] Basic file input and output
 - [x] Basic stream-state checking
 - [x] Basic `std::filesystem`
-- [ ] Value and reference parameters
+- [x] Value and reference parameters
 - [ ] Header and source file separation
 
 ## Learning Log
@@ -96,16 +103,17 @@ Records:
 - [Day 01 — First C++20 Program](day01_Basic_C++/)
 - [Day 02 — Streams, File I/O, and Filesystem](day02/)
 - [Day 03 — Arrays, Smart Pointers, and std::vector](day03/)
+- [Day 04 — Pointers, Dynamic Memory, and Function Parameters](day04/)
 
 Additional daily records will be added as the study progresses.
 
 ## Current Focus
 
-Day 03 was completed as a practice-focused session.
+Day 04 was completed as a review-focused session using *Do it! C++ Complete Guide*.
 
-The session covered element-wise array calculations, passing arrays to functions, dynamic allocation with `new[]`, manual cleanup with `delete[]`, ownership with `std::unique_ptr` and `std::shared_ptr`, and basic `std::vector` usage.
+The session covered pointer variables, address and dereference operators, multiple pointers, arrays and pointers, dynamic allocation with `new` and `new[]`, cleanup with `delete` and `delete[]`, function arguments and return values, modifying original variables through pointers, passing arrays and struct arrays to functions, static local variables, and reference parameters.
 
-A separate `main.cpp` was not created because the available study time was used to understand several closely related examples and memory-management concepts. The current priority remains understanding the examples and being able to explain the ownership and lifetime rules before building a larger program.
+Multiple pointers were introduced, but they will be revisited later through practical function and NPC relationship exercises. The current priority is to continue progressing while strengthening pointers and references through repeated use.
 
 ## Completion Criteria
 
@@ -116,9 +124,11 @@ The fundamentals stage will be considered complete when I can:
 3. modify a program and predict the result,
 4. diagnose basic compiler and runtime errors,
 5. use functions, standard-library containers, references, pointers, and `const`,
-6. check stream states before using file input,
-7. inspect basic directory entries with `std::filesystem`,
-8. and divide a small program into multiple files.
+6. allocate and safely release basic dynamic memory,
+7. explain why modern C++ usually prefers containers and smart pointers over manual memory management,
+8. check stream states before using file input,
+9. inspect basic directory entries with `std::filesystem`,
+10. and divide a small program into multiple files.
 
 ## Next Stage
 
