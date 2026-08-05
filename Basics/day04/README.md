@@ -145,3 +145,9 @@ Day 03 introduced raw pointers, dynamic arrays, and smart pointers too quickly.
 - Prefer `std::vector` over manually managed dynamic arrays in modern C++.
 - Prefer references when a function must modify an existing value and nullability is not required.
 - Continue the learning sequence instead of stopping until every pointer detail is fully mastered.
+
+- PRACTICE:
+  - implemented a small character example with guided assistance
+  - used pointers or references to modify character state
+  - compiled and tested the program
+  - understood the overall structure, but some syntax still requires review
