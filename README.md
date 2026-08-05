@@ -104,9 +104,9 @@ A topic is considered complete only when I can modify the code and explain the c
 * [ ] Loops
 * [ ] Functions
 * [ ] `std::string`
-* [ ] `std::vector`
-* [ ] References and pointers
-* [ ] `const`
+* [x] Basic `std::vector`
+* [x] Basic references and pointers
+* [x] Basic `const` parameters
 * [x] Basic output streams
 * [x] Basic file input and output
 * [x] Basic stream-state checking
@@ -141,7 +141,7 @@ A topic is considered complete only when I can modify the code and explain the c
 * [ ] Basic templates
 * [ ] Copy and move fundamentals
 * [ ] RAII
-* [ ] Smart pointers
+* [x] Basic smart-pointer introduction
 * [ ] Error handling
 * [ ] Basic automated testing
 * [ ] CMake
@@ -165,7 +165,8 @@ cpp20_practice/
 ├── Basics/
 │   ├── README.md
 │   ├── day01_Basic_C++/
-│   └── day02/
+│   ├── day02/
+│   └── day03/
 ├── classes/
 ├── stl/
 ├── modern_cpp/
@@ -178,11 +179,11 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 1 — C++ Fundamentals
 
-**Current topic:** Streams, file input and output, stream states, and basic filesystem inspection
+**Current topic:** Arrays, dynamic memory, smart pointers, and basic `std::vector` usage
 
-**Current exercise:** Day 02 completed as a practice-focused session without a separate `main.cpp`
+**Current exercise:** Day 03 completed as a practice-focused session without a separate `main.cpp`
 
-**Next milestone:** Continue the next fundamentals section and create a small applied program only when the studied concepts are ready to be combined meaningfully
+**Next milestone:** Continue practicing containers and references, then combine the concepts in a small applied program when the syntax is sufficiently familiar
 
 ## Learning Log
 
@@ -190,6 +191,7 @@ The structure will be expanded gradually as the study progresses.
 
 - [Day 01 — First C++20 Practice Session](Basics/day01_Basic_C++/)
 - [Day 02 — Streams, File I/O, and Filesystem](Basics/day02/)
+- [Day 03 — Arrays, Smart Pointers, and std::vector](Basics/day03/)
 
 ## Long-Term Direction
 

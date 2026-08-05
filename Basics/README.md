@@ -18,6 +18,9 @@ In this stage, I will learn how to:
 - check stream states before using input data,
 - inspect files and directories with `std::filesystem`,
 - understand references, pointers, and `const`,
+- allocate and release basic dynamic arrays,
+- use `std::unique_ptr` and `std::shared_ptr`,
+- pass `std::vector` objects by reference,
 - and separate a program into multiple source files.
 
 ## Study Structure
@@ -75,12 +78,12 @@ Records:
 - [ ] Conditional statements
 - [ ] Loops
 - [ ] Functions
-- [ ] Arrays
+- [x] Basic arrays
 - [ ] `std::string`
-- [ ] `std::vector`
-- [ ] References
-- [ ] Pointers
-- [ ] `const`
+- [x] Basic `std::vector`
+- [x] Basic references
+- [x] Basic pointers
+- [x] Basic `const` parameters
 - [x] Basic output streams
 - [x] Basic file input and output
 - [x] Basic stream-state checking
@@ -92,16 +95,17 @@ Records:
 
 - [Day 01 — First C++20 Program](day01_Basic_C++/)
 - [Day 02 — Streams, File I/O, and Filesystem](day02/)
+- [Day 03 — Arrays, Smart Pointers, and std::vector](day03/)
 
 Additional daily records will be added as the study progresses.
 
 ## Current Focus
 
-Day 02 was completed as a practice-focused session.
+Day 03 was completed as a practice-focused session.
 
-The session was used to understand and test several stream and filesystem examples. A separate `main.cpp` was not created because the textbook examples, compiler messages, and debugging process required the available study time.
+The session covered element-wise array calculations, passing arrays to functions, dynamic allocation with `new[]`, manual cleanup with `delete[]`, ownership with `std::unique_ptr` and `std::shared_ptr`, and basic `std::vector` usage.
 
-This is consistent with the repository method: understanding and explaining the examples takes priority over creating an applied program before the concepts are ready.
+A separate `main.cpp` was not created because the available study time was used to understand several closely related examples and memory-management concepts. The current priority remains understanding the examples and being able to explain the ownership and lifetime rules before building a larger program.
 
 ## Completion Criteria
 
