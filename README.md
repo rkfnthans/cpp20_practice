@@ -1,24 +1,25 @@
 # C++20 Practice
 
-This repository documents my process of learning modern C++20 through syntax experiments, exercises, and small applied programs.
+This repository documents my process of learning modern C++20 through syntax experiments, review exercises, and small applied programs.
 
-I have previous experience with C and Python, but I am currently learning modern C++ from the fundamentals.
+I have previous experience with C and Python, but I am currently rebuilding my programming foundation in modern C++ step by step.
 
 ## Purpose
 
 The goals of this repository are to:
 
-- learn modern C++20 step by step,
+- learn modern C++20 through direct implementation,
 - understand the differences between C, Python, and C++,
-- practice writing, compiling, and debugging C++ code,
-- apply each concept through small programs,
-- build a consistent technical learning record,
+- practice compiling, running, and debugging C++ programs,
+- apply each group of concepts through a small program,
+- record mistakes and corrections for later review,
+- build a consistent technical learning history,
 - and prepare for the future development of the Living World Engine.
 
 ## Study Material
 
 - Main book: *Modern C++: Learn Only What You Need* (*필요한 것만 골라 배우는 모던 C++*)
-- Review book: *Do it! C++ Complete Guide*
+- Supplementary material: *Do it! C++ Complete Guide* (*Do it! C++ 완전 정복*)
 - Language standard: C++20
 - Compiler: Apple Clang
 - Development environment: macOS and Visual Studio Code
@@ -27,7 +28,7 @@ The goals of this repository are to:
 
 ## Learning Method
 
-A typical study session may contain the following files:
+A typical study session uses the following structure:
 
 ```text
 day_XX_topic/
@@ -36,81 +37,79 @@ day_XX_topic/
 └── main.cpp
 ```
 
-Some sessions may contain only `practice.cpp` and a `README.md` when the available study time is used to understand, modify, and debug textbook examples.
-
 ### `practice.cpp`
 
-This file is used as a programming notebook.
+This file is used as a temporary programming notebook.
 
 It may contain:
 
-- examples typed while reading the book,
-- small syntax experiments,
-- selected textbook exercises,
-- modified values and expressions,
+- examples typed while reading a book or watching a lecture,
+- syntax experiments,
+- selected exercises,
+- modified versions of example code,
 - comparisons between different C++ behaviors,
-- and code written specifically to reproduce an error or warning.
-
-The file may be rewritten several times during one study session. Important examples are preserved separately when they are useful for later review.
+- and code written to reproduce an error or compiler warning.
 
 ### `main.cpp`
 
-This file contains a small applied program built using the concepts studied that day.
+This file contains a small applied program that combines the concepts studied during the session.
 
-A `main.cpp` file is added only when the session includes enough time and concepts suitable for a meaningful applied program. Completing textbook examples and understanding their behavior takes priority over creating a forced mini-project.
+The program should have a clear purpose rather than simply listing isolated syntax examples.
+
+Examples include:
+
+- a resource calculator,
+- a file-processing program,
+- a character status system,
+- a small NPC simulation,
+- and a basic world-state simulation.
 
 ### Daily `README.md`
 
 Each daily README records:
 
-- the concepts studied,
-- what was implemented,
+- concepts studied,
+- program structure,
+- implementation decisions,
 - mistakes and corrections,
-- differences from C or Python,
+- C or Python comparisons,
 - what I can explain after the session,
 - and the next topic.
 
 ## Learning Process
 
 ```text
-Read the relevant section
+Read or watch the relevant material
 → Test the syntax in practice.cpp
-→ Complete selected exercises
-→ Build a small program in main.cpp when appropriate
-→ Compile and run the code
-→ Record mistakes and corrections
-→ Commit and push the results
+→ Modify the example without copying it exactly
+→ Build a small program in main.cpp
+→ Compile and run the program
+→ Fix warnings and logic errors
+→ Record the result in README.md
+→ Commit and push the changes
 ```
 
-A topic is considered complete only when I can modify the code and explain the concept without copying the original example.
+A topic is considered complete only when I can modify the code, predict the result, and explain the main structure without copying the original example.
 
 ## Learning Roadmap
 
 ### Stage 1 — C++ Fundamentals
 
 - [x] Compile and run a C++20 program
-- [ ] Variables and initialization
-- [ ] Operators and expressions
-- [ ] Conditional statements
-- [ ] Loops
-- [x] Basic functions and return values
-- [ ] `std::string`
-- [x] Basic arrays
-- [x] Basic `std::vector`
-- [x] References and reference parameters
-- [x] Basic pointers and dereferencing
-- [x] Arrays and pointers
-- [x] Basic dynamic memory with `new` and `delete`
-- [x] Dynamic arrays with `new[]` and `delete[]`
-- [x] Basic `const` parameters
-- [x] Basic output streams
-- [x] Basic file input and output
-- [x] Basic stream-state checking
-- [x] Basic filesystem inspection
-- [x] Static local variables
+- [x] Variables and initialization
+- [x] Operators and expressions
+- [x] Conditional statements
+- [x] Loops
+- [x] Functions
+- [x] `std::string`
+- [x] References
+- [x] Basic pointers
+- [x] Dynamic memory fundamentals
+- [ ] `std::vector`
+- [ ] `const` usage in function interfaces
 - [ ] Multiple source files
 
-### Stage 2 — Classes
+### Stage 2 — Classes and Object-Oriented C++
 
 - [ ] Define a class
 - [ ] Use constructors
@@ -120,17 +119,21 @@ A topic is considered complete only when I can modify the code and explain the c
 - [ ] Store objects in containers
 - [ ] Separate declarations and implementations
 - [ ] Understand basic object lifetime
+- [ ] Understand inheritance and virtual functions
 
-### Stage 3 — Standard Library
+### Stage 3 — Standard Library and Data Structures
 
 - [ ] `std::array`
+- [ ] `std::vector`
 - [ ] STL iterators
 - [ ] STL algorithms
 - [ ] `std::map`
 - [ ] `std::unordered_map`
+- [ ] `std::stack`
+- [ ] `std::queue`
+- [ ] `std::priority_queue`
 - [ ] `std::optional`
 - [ ] `std::variant`
-- [ ] Random-number utilities
 
 ### Stage 4 — Modern C++ Foundations
 
@@ -138,7 +141,7 @@ A topic is considered complete only when I can modify the code and explain the c
 - [ ] Basic templates
 - [ ] Copy and move fundamentals
 - [ ] RAII
-- [x] Basic smart-pointer introduction
+- [ ] Smart pointer review
 - [ ] Error handling
 - [ ] Basic automated testing
 - [ ] CMake
@@ -149,6 +152,7 @@ A topic is considered complete only when I can modify the code and explain the c
 - [ ] Store resources in each cell
 - [ ] Advance simulation time
 - [ ] Implement resource production and consumption
+- [ ] Implement NPC needs and actions
 - [ ] Implement seasonal changes
 - [ ] Divide the program into multiple files
 - [ ] Add basic tests
@@ -159,12 +163,7 @@ A topic is considered complete only when I can modify the code and explain the c
 cpp20_practice/
 ├── README.md
 ├── .gitignore
-├── Basics/
-│   ├── README.md
-│   ├── day01_Basic_C++/
-│   ├── day02/
-│   ├── day03/
-│   └── day04/
+├── basics/
 ├── classes/
 ├── stl/
 ├── modern_cpp/
@@ -177,25 +176,24 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 1 — C++ Fundamentals
 
-**Latest completed topic:** Pointer fundamentals, arrays and pointers, dynamic memory, function parameters, references, and static local variables
+**Current topic:** Combining structs, functions, references, conditions, loops, and user input
 
-**Latest session:** Day 04 completed as a review-focused session using *Do it! C++ Complete Guide*
+**Current exercise:** Day 05 — NPC Daily Life Simulation
 
-**Review item:** Practice multiple pointers again later through functions and NPC relationship examples
-
-**Next milestone:** Continue the book while applying pointers and references in small exercises instead of stopping the overall progression
+**Next milestone:** Begin object-oriented C++ lectures and rebuild the NPC simulation using a class, constructor, member functions, and file separation.
 
 ## Learning Log
 
 ### C++ Fundamentals
 
-- [Day 01 — First C++20 Practice Session](Basics/day01_Basic_C++/)
-- [Day 02 — Streams, File I/O, and Filesystem](Basics/day02/)
-- [Day 03 — Arrays, Smart Pointers, and std::vector](Basics/day03/)
-- [Day 04 — Pointers, Dynamic Memory, and Function Parameters](Basics/day04/)
+- [Day 01 — First C++20 Practice Session](basics/day_01/)
+- [Day 02 — File, Stream, and Filesystem Practice](basics/day_02/)
+- [Day 03 — Smart Pointer and Dynamic Memory Introduction](basics/day_03/)
+- [Day 04 — Pointer and Dynamic Memory Review](basics/day_04/)
+- [Day 05 — NPC Daily Life Simulation](basics/day_05/)
 
 ## Long-Term Direction
 
-The concepts learned in this repository will eventually be applied to the **Living World Engine**, a long-term C++20 world simulation project.
+The concepts learned in this repository will eventually be applied to the **Living World Engine**, a long-term C++20 simulation project.
 
-This repository contains learning exercises and experiments. The Living World Engine repository will contain reviewed, understood, and tested project code.
+The current practice repository contains learning exercises, experiments, and review programs. The future Living World Engine repository will contain reviewed, understood, tested, and progressively optimized systems.

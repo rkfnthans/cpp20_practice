@@ -2,7 +2,7 @@
 
 This directory contains my study records for the fundamental features of modern C++20.
 
-The purpose of this stage is to build a reliable foundation before studying classes, the C++ standard library, resource management, and simulation architecture.
+The purpose of this stage is to build a reliable programming foundation before moving to classes, the C++ standard library, data structures, algorithms, resource management, and simulation architecture.
 
 ## Learning Objectives
 
@@ -13,24 +13,16 @@ In this stage, I will learn how to:
 - use operators and expressions,
 - control program flow with conditions and loops,
 - write and call functions,
-- use basic standard-library types,
-- use console, file, and in-memory streams,
-- check stream states before using input data,
-- inspect files and directories with `std::filesystem`,
-- understand references, pointers, and `const`,
-- understand the relationship between arrays and pointers,
-- allocate and release dynamic memory,
-- pass arrays and struct arrays to functions,
-- modify original variables through pointers and references,
-- use `std::unique_ptr` and `std::shared_ptr`,
-- pass `std::vector` objects by reference,
+- pass objects by reference,
+- use basic pointers and dynamic memory,
+- use standard-library strings and containers,
+- validate user input,
+- organize a small program into clear functions,
 - and separate a program into multiple source files.
 
 ## Study Structure
 
 Each study session is organized into a separate Day directory.
-
-A typical directory contains:
 
 ```text
 day_XX/
@@ -39,97 +31,113 @@ day_XX/
 └── main.cpp
 ```
 
-Some directories may contain only `practice.cpp` and a `README.md` when the session is fully used for textbook examples, syntax experiments, compilation, and debugging.
-
 ### `practice.cpp`
 
 Used as a temporary programming notebook for:
 
-- examples typed while reading the book,
+- examples typed while studying,
 - syntax experiments,
 - selected textbook exercises,
 - testing different values and expressions,
-- and checking unexpected compiler or runtime behavior.
+- reproducing compiler warnings or errors,
+- and comparing alternative implementations.
 
-The file may be rewritten several times during a study session.
+The file may be rewritten several times during one session.
 
 ### `main.cpp`
 
-Contains a small applied program built using the concepts studied that day.
+Contains a small applied program built from the concepts studied during that day.
 
-Not every study session requires a `main.cpp`. It is added only when the studied concepts and available time support a meaningful applied exercise.
+The objective is to combine syntax into a program with a clear purpose rather than preserving isolated examples only.
 
 ### Daily `README.md`
 
 Records:
 
 - topics studied,
-- practice methods,
-- programs created,
+- the program that was created,
+- implementation decisions,
 - mistakes and corrections,
 - observations about C++ behavior,
 - comparisons with C or Python,
+- what I can explain after the session,
 - and the next topic.
 
-## Planned Topics
+## Completed and Planned Topics
 
 - [x] First C++20 program
-- [ ] Variables and initialization
-- [ ] Operators and expressions
-- [ ] Conditional statements
-- [ ] Loops
-- [x] Basic functions and return values
-- [x] Basic arrays
-- [ ] `std::string`
-- [x] Basic `std::vector`
-- [x] Basic references
+- [x] Variables and initialization
+- [x] Operators and expressions
+- [x] Conditional statements
+- [x] Loops
+- [x] Functions
+- [x] Arrays
+- [x] `std::string`
+- [x] References
 - [x] Basic pointers
-- [x] Arrays and pointers
-- [x] Dynamic memory with `new` and `delete`
-- [x] Dynamic arrays with `new[]` and `delete[]`
-- [x] Passing arrays to functions
-- [x] Passing struct arrays to functions
-- [x] Static local variables
-- [x] Basic `const` parameters
-- [x] Basic output streams
-- [x] Basic file input and output
-- [x] Basic stream-state checking
-- [x] Basic `std::filesystem`
+- [x] Pointer reassignment
+- [x] Array and pointer size comparison
+- [x] `new`, `delete`, `new[]`, and `delete[]`
+- [x] Introductory smart pointers
 - [x] Value and reference parameters
+- [x] File streams and filesystem basics
+- [x] Struct-based applied simulation
+- [x] Input validation with Boolean return values
+- [ ] `std::vector`
+- [ ] Consistent `const` usage
 - [ ] Header and source file separation
+- [ ] Classes and constructors
 
 ## Learning Log
 
-- [Day 01 — First C++20 Program](day01_Basic_C++/)
-- [Day 02 — Streams, File I/O, and Filesystem](day02/)
-- [Day 03 — Arrays, Smart Pointers, and std::vector](day03/)
-- [Day 04 — Pointers, Dynamic Memory, and Function Parameters](day04/)
+- [Day 01 — First C++20 Practice Session](day_01/)
+- [Day 02 — File, Stream, and Filesystem Practice](day_02/)
+- [Day 03 — Smart Pointer and Dynamic Memory Introduction](day_03/)
+- [Day 04 — Pointer and Dynamic Memory Review](day_04/)
+- [Day 05 — NPC Daily Life Simulation](day_05/)
 
-Additional daily records will be added as the study progresses.
+## Day 05 Milestone
 
-## Current Focus
+Day 05 combines several previously studied fundamentals into one small interactive simulation.
 
-Day 04 was completed as a review-focused session using *Do it! C++ Complete Guide*.
+The program includes:
 
-The session covered pointer variables, address and dereference operators, multiple pointers, arrays and pointers, dynamic allocation with `new` and `new[]`, cleanup with `delete` and `delete[]`, function arguments and return values, modifying original variables through pointers, passing arrays and struct arrays to functions, static local variables, and reference parameters.
+- an `NPC` structure,
+- status variables for hunger, energy, and food,
+- functions that modify the original NPC through references,
+- user-selected actions,
+- a Boolean result indicating whether a command was valid,
+- a seven-day simulation loop,
+- prevention of day progression after an unknown command,
+- and final status output.
 
-Multiple pointers were introduced, but they will be revisited later through practical function and NPC relationship exercises. The current priority is to continue progressing while strengthening pointers and references through repeated use.
+This exercise is the current transition point between isolated syntax practice and object-oriented C++.
 
 ## Completion Criteria
 
 The fundamentals stage will be considered complete when I can:
 
-1. write and compile a small C++20 program without copying,
+1. write and compile a small C++20 program without copying a complete solution,
 2. explain the purpose of each major statement,
 3. modify a program and predict the result,
-4. diagnose basic compiler and runtime errors,
-5. use functions, standard-library containers, references, pointers, and `const`,
-6. allocate and safely release basic dynamic memory,
-7. explain why modern C++ usually prefers containers and smart pointers over manual memory management,
-8. check stream states before using file input,
-9. inspect basic directory entries with `std::filesystem`,
-10. and divide a small program into multiple files.
+4. diagnose basic compiler, runtime, and logic errors,
+5. use functions, references, pointers, strings, conditions, and loops,
+6. validate user input without corrupting program state,
+7. use `const` appropriately for read-only function parameters,
+8. store multiple objects in a standard-library container,
+9. and divide a small program into multiple files.
 
 ## Next Stage
 
-After completing this directory, I will continue with classes, constructors, encapsulation, member functions, and object lifetime.
+After completing the remaining fundamentals, I will continue with:
+
+- classes and objects,
+- constructors,
+- encapsulation with `private` and `public`,
+- member functions,
+- `const` member functions,
+- inheritance and virtual functions,
+- `std::vector`,
+- and header/source file separation.
+
+The Day 05 NPC simulation will later be rebuilt as an object-oriented program so that the structural differences can be compared directly.
