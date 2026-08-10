@@ -95,6 +95,7 @@ Records:
 - [Day 03 — Smart Pointer and Dynamic Memory Introduction](day_03/)
 - [Day 04 — Pointer and Dynamic Memory Review](day_04/)
 - [Day 05 — NPC Daily Life Simulation](day_05/)
+- [Day 06 — C++ Fundamentals Review and Exercises](day_06/)
 
 ## Day 05 Milestone
 
@@ -111,7 +112,28 @@ The program includes:
 - prevention of day progression after an unknown command,
 - and final status output.
 
-This exercise is the current transition point between isolated syntax practice and object-oriented C++.
+This exercise is an important transition point between isolated syntax practice and object-oriented C++. Day 06 then reinforces the underlying fundamentals through targeted review and diagnostic exercises.
+
+
+## Day 06 Milestone
+
+Day 06 reviews core language fundamentals through textbook exercises and direct compiler/runtime experiments.
+
+The session includes:
+
+- narrowing-conversion checks with brace initialization,
+- integer literal suffixes and `auto`,
+- mathematical expressions using intermediate variables and `std::numbers::pi`,
+- a median-of-three program using both nested `if` / `else` and `?:`,
+- a bisection-method loop with `std::signbit()` and a `1e-12` tolerance,
+- fixed arrays and dynamically allocated arrays,
+- correct `new[]` / `delete[]` pairing,
+- intentional memory-leak testing with the macOS `leaks` tool,
+- deliberate `new[]` / `delete` mismatch testing and Clang diagnostics,
+- unit-conversion functions,
+- and `assert()` with epsilon-based floating-point comparison.
+
+The session also reinforced the difference between compiler warnings, runtime behavior, and dedicated memory-leak diagnostics.
 
 ## Completion Criteria
 

@@ -176,11 +176,11 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 1 — C++ Fundamentals
 
-**Current topic:** Combining structs, functions, references, conditions, loops, and user input
+**Current topic:** Reviewing C++ fundamentals through textbook exercises, with emphasis on numerical loops, dynamic memory diagnostics, and function testing
 
-**Current exercise:** Day 05 — NPC Daily Life Simulation
+**Current exercise:** Day 06 — C++ Fundamentals Review and Exercises
 
-**Next milestone:** Begin object-oriented C++ lectures and rebuild the NPC simulation using a class, constructor, member functions, and file separation.
+**Next milestone:** Complete the remaining fundamentals exercises, then begin object-oriented C++ and rebuild the NPC simulation using a class, constructor, member functions, and file separation.
 
 ## Learning Log
 
@@ -191,6 +191,7 @@ The structure will be expanded gradually as the study progresses.
 - [Day 03 — Smart Pointer and Dynamic Memory Introduction](basics/day_03/)
 - [Day 04 — Pointer and Dynamic Memory Review](basics/day_04/)
 - [Day 05 — NPC Daily Life Simulation](basics/day_05/)
+- [Day 06 — C++ Fundamentals Review and Exercises](basics/day_06/)
 
 ## Long-Term Direction
 
