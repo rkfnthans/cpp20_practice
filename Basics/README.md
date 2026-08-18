@@ -83,6 +83,7 @@ Records:
 - [x] File streams and filesystem basics
 - [x] Struct-based applied simulation
 - [x] Input validation with Boolean return values
+- [x] Basic exception handling with `try`, `throw`, and `catch`
 - [ ] `std::vector`
 - [ ] Consistent `const` usage
 - [ ] Header and source file separation
@@ -96,6 +97,7 @@ Records:
 - [Day 04 — Pointer and Dynamic Memory Review](day_04/)
 - [Day 05 — NPC Daily Life Simulation](day_05/)
 - [Day 06 — C++ Fundamentals Review and Exercises](day_06/)
+- [Day 07 — Exception Handling](day_07/)
 
 ## Day 05 Milestone
 
@@ -134,6 +136,23 @@ The session includes:
 - and `assert()` with epsilon-based floating-point comparison.
 
 The session also reinforced the difference between compiler warnings, runtime behavior, and dedicated memory-leak diagnostics.
+
+
+## Day 07 Milestone
+
+Day 07 introduces basic exception handling using *Do it! C++ Complete Guide*.
+
+The session includes:
+
+- `try`, `throw`, and `catch`,
+- throwing and catching different types such as `int`, `float`, and `char`,
+- observing that code after an executed `throw` is skipped,
+- using exceptions for invalid input,
+- distinguishing assignment (`=`) from comparison (`==`),
+- learning that `catch` matches exception types rather than specific values,
+- and building a simple Safe Calculator that handles division by zero and invalid operators.
+
+The main exercise uses integer error codes with a single `catch(int error)` block to distinguish multiple error cases.
 
 ## Completion Criteria
 
