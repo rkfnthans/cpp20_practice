@@ -87,7 +87,9 @@ Records:
 - [ ] `std::vector`
 - [ ] Consistent `const` usage
 - [ ] Header and source file separation
-- [ ] Classes and constructors
+- [x] Classes and constructors — introductory practice
+- [x] Data members and member functions — introductory practice
+- [x] Default and delegating constructors — introductory practice
 
 ## Learning Log
 
@@ -98,6 +100,7 @@ Records:
 - [Day 05 — NPC Daily Life Simulation](day_05/)
 - [Day 06 — C++ Fundamentals Review and Exercises](day_06/)
 - [Day 07 — Exception Handling](day_07/)
+- [Day 08 — Members and Constructors](day_08/)
 
 ## Day 05 Milestone
 
@@ -153,6 +156,21 @@ The session includes:
 - and building a simple Safe Calculator that handles division by zero and invalid operators.
 
 The main exercise uses integer error codes with a single `catch(int error)` block to distinguish multiple error cases.
+
+
+## Day 08 Milestone
+
+Day 08 begins introductory class and constructor practice using *Modern C++: Learn Only What You Need*.
+
+The session includes:
+
+- data members as object state,
+- member functions as object behavior,
+- accessing private data through member functions,
+- constructors and member initializer lists,
+- default constructors,
+- object creation with and without constructor arguments,
+- and delegating constructors for reusing initialization logic.
 
 ## Completion Criteria
 

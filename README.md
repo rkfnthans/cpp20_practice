@@ -112,10 +112,10 @@ A topic is considered complete only when I can modify the code, predict the resu
 
 ### Stage 2 — Classes and Object-Oriented C++
 
-- [ ] Define a class
-- [ ] Use constructors
+- [x] Define a class — introductory practice
+- [x] Use constructors — introductory practice
 - [ ] Understand `public` and `private`
-- [ ] Write member functions
+- [x] Write member functions — introductory practice
 - [ ] Write `const` member functions
 - [ ] Store objects in containers
 - [ ] Separate declarations and implementations
@@ -175,13 +175,13 @@ The structure will be expanded gradually as the study progresses.
 
 ## Current Progress
 
-**Current stage:** Stage 1 — C++ Fundamentals
+**Current stage:** Stage 2 — Classes and Object-Oriented C++ (introductory)
 
-**Current topic:** Basic exception handling with `try`, `throw`, and `catch`
+**Current topic:** Members, member functions, constructors, default constructors, and delegating constructors
 
-**Current exercise:** Day 07 — Exception Handling and Safe Calculator
+**Current exercise:** Day 08 — Members and Constructors
 
-**Next milestone:** Continue exception-handling practice, then move toward classes, constructors, member functions, and file separation.
+**Next milestone:** Continue constructor-related topics and class design practice.
 
 ## Learning Log
 
@@ -194,6 +194,7 @@ The structure will be expanded gradually as the study progresses.
 - [Day 05 — NPC Daily Life Simulation](basics/day_05/)
 - [Day 06 — C++ Fundamentals Review and Exercises](basics/day_06/)
 - [Day 07 — Exception Handling](basics/day_07/)
+- [Day 08 — Members and Constructors](basics/day_08/)
 
 ## Long-Term Direction
 
