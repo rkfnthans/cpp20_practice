@@ -172,6 +172,33 @@ The session includes:
 - object creation with and without constructor arguments,
 - and delegating constructors for reusing initialization logic.
 
+
+
+## Day 09 Milestone
+
+Day 09 practices user-defined literals and object creation with a `Distance` class.
+
+The session includes:
+
+- creating `Distance` objects from custom `_m` and `_km` suffixes,
+- converting kilometer literals to meters before storage,
+- storing all distance values internally in meters,
+- using `auto` to deduce the returned `Distance` type,
+- defining `operator+` so two `Distance` objects can be added,
+- returning a new `Distance` object from the addition,
+- explicitly converting `long double` to `double` with `static_cast<double>()`,
+- and converting the internally stored meter value back to kilometers for output.
+
+The practice flow is:
+
+```text
+literal
+-> literal operator
+-> Distance object
+-> calculation in meters
+-> output in kilometers
+```
+
 ## Completion Criteria
 
 The fundamentals stage will be considered complete when I can:

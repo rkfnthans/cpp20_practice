@@ -177,11 +177,11 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 2 — Classes and Object-Oriented C++ (introductory)
 
-**Current topic:** Members, member functions, constructors, default constructors, and delegating constructors
+**Current topic:** User-defined literals and object creation
 
-**Current exercise:** Day 08 — Members and Constructors
+**Current exercise:** Day 09 — User-Defined Literals and Distance Objects
 
-**Next milestone:** Continue constructor-related topics and class design practice.
+**Next milestone:** Continue modern C++ class and object-lifetime topics.
 
 ## Learning Log
 
@@ -195,6 +195,7 @@ The structure will be expanded gradually as the study progresses.
 - [Day 06 — C++ Fundamentals Review and Exercises](basics/day_06/)
 - [Day 07 — Exception Handling](basics/day_07/)
 - [Day 08 — Members and Constructors](basics/day_08/)
+- [Day 09 — User-Defined Literals and Object Creation](basics/day_09/)
 
 ## Long-Term Direction
 
