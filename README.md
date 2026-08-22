@@ -141,8 +141,8 @@ A topic is considered complete only when I can modify the code, predict the resu
 - [ ] Lambda expressions
 - [ ] Basic templates
 - [ ] Copy and move fundamentals
-- [ ] RAII
-- [ ] Smart pointer review
+- [x] RAII — introductory practice
+- [x] Smart pointer review — introductory practice
 - [ ] Error handling
 - [ ] Basic automated testing
 - [ ] CMake
@@ -177,11 +177,11 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 2 — Classes and Object-Oriented C++ (introductory)
 
-**Current topic:** User-defined literals and object creation
+**Current topic:** RAII, `shared_ptr`, and custom deleters
 
-**Current exercise:** Day 09 — User-Defined Literals and Distance Objects
+**Current exercise:** Day 10 — GameWorld/NPC resource-lifetime practice
 
-**Next milestone:** Continue modern C++ class and object-lifetime topics.
+**Next milestone:** Reinforce object lifetime, ownership, and smart-pointer behavior through additional practice.
 
 ## Learning Log
 
@@ -196,6 +196,7 @@ The structure will be expanded gradually as the study progresses.
 - [Day 07 — Exception Handling](basics/day_07/)
 - [Day 08 — Members and Constructors](basics/day_08/)
 - [Day 09 — User-Defined Literals and Object Creation](basics/day_09/)
+- [Day 10 — RAII, shared_ptr, and Custom Deleters](basics/day_10/)
 
 ## Long-Term Direction
 

@@ -199,6 +199,38 @@ literal
 -> output in kilometers
 ```
 
+
+## Day 10 Milestone
+
+Day 10 introduces RAII, `shared_ptr`, and custom deleters through a simplified game-oriented `GameWorld` and `NPC` example.
+
+The session includes:
+
+- creating an `NPC` dynamically with `spawnNPC()`,
+- returning the created object's address as `NPC*`,
+- reviewing raw pointers and the `->` member-access operator,
+- using `shared_ptr` to manage object lifetime,
+- understanding that multiple `shared_ptr` objects can share ownership,
+- using `use_count()` to inspect the number of shared owners,
+- defining a custom deleter with `operator()`,
+- keeping `GameWorld` alive through `shared_ptr<GameWorld>` while an NPC may still need to be removed,
+- understanding that each `shared_ptr<NPC>` manages one specific NPC object,
+- and connecting automatic cleanup behavior to the RAII principle.
+
+The conceptual flow is:
+
+```text
+create GameWorld
+-> create NPC
+-> shared_ptr manages NPC
+-> custom deleter keeps GameWorld alive
+-> last NPC owner disappears
+-> npc_deleter is called
+-> GameWorld::removeNPC()
+-> NPC is destroyed
+-> GameWorld is destroyed when its last owner disappears
+```
+
 ## Completion Criteria
 
 The fundamentals stage will be considered complete when I can:
