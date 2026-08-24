@@ -231,6 +231,36 @@ create GameWorld
 -> GameWorld is destroyed when its last owner disappears
 ```
 
+
+## Day 11 Milestone
+
+Day 11 focuses on member access, reference-returning access methods, subscript operators, const member functions, temporary-object safety, and reference-qualified member functions.
+
+The session includes:
+
+- returning member values by value, non-const reference, and const reference,
+- understanding that a returned reference can expose the original member for modification,
+- using non-member access functions and `friend` functions,
+- understanding temporary-object lifetime and dangling references,
+- overloading `operator[]` for indexed access,
+- providing both modifiable and read-only subscript access,
+- distinguishing `operator[]` from checked access with `at()`,
+- using const member functions,
+- using ref-qualifiers `&` and `&&` to control whether a member function can be called on lvalues or rvalues,
+- and returning by value from temporary/rvalue objects to avoid unsafe references.
+
+The conceptual flow is:
+
+```text
+member access
+-> return by value or reference
+-> operator[]
+-> const access
+-> temporary-object lifetime
+-> ref-qualified member functions
+-> safe lvalue/rvalue behavior
+```
+
 ## Completion Criteria
 
 The fundamentals stage will be considered complete when I can:

@@ -177,11 +177,11 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 2 — Classes and Object-Oriented C++ (introductory)
 
-**Current topic:** RAII, `shared_ptr`, and custom deleters
+**Current topic:** Member access, subscript operators, const member functions, and reference-qualified member functions
 
-**Current exercise:** Day 10 — GameWorld/NPC resource-lifetime practice
+**Current exercise:** Day 11 — Member access and reference-qualified operators
 
-**Next milestone:** Reinforce object lifetime, ownership, and smart-pointer behavior through additional practice.
+**Next milestone:** Continue class design and operator-overloading topics.
 
 ## Learning Log
 
@@ -197,6 +197,7 @@ The structure will be expanded gradually as the study progresses.
 - [Day 08 — Members and Constructors](basics/day_08/)
 - [Day 09 — User-Defined Literals and Object Creation](basics/day_09/)
 - [Day 10 — RAII, shared_ptr, and Custom Deleters](basics/day_10/)
+- [Day 11 — Member Access and Reference-Qualified Operators](basics/day_11/)
 
 ## Long-Term Direction
 
