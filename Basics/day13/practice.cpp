@@ -1,133 +1,110 @@
 #include <iostream>
-#include <numeric>
-#include <stdexcept>
+#include <initializer_list>
 
-using namespace std;
-
-class Rational
+class Polynomial
 {
     private:
-        int numerator;
-        int denominator;
+        int degree;
+        double* coefficients;
 
-        void normalize()
-        {
-            if (denominator<0)
-            {
-                numerator=-numerator;
-                denominator=-denominator;
-            }
-
-            int g = gcd(numerator,denominator);
-
-            numerator=numerator/g;
-            denominator=denominator/g;
-        }
     public:
-        Rational(int n, int d=1)
-            :numerator{n}, denominator{d}
+        explicit Polynomial(int d)
+            :degree{d}, coefficients{new double[d+1]{}}{}
+
+        Polynomial(const Polynomial&)=default;
+
+        Polynomial(std::initializer_list<double> values)
         {
-            if (denominator==0)
+            degree=static_cast<int>(values.size())-1;
+
+            coefficients=new double[values.size()];
+
+            int i{0};
+
+            for (double value : values)
             {
-                throw std::invalid_argument{"denominator cannot be zero"};
+                coefficients[i]=value;
+
+                ++i;
+
             }
-            
-            normalize();
+
         }
 
-        Rational operator+(const Rational& other) const
+        Polynomial& operator=(Polynomial&& other) noexcept
         {
-            int new_numerator=numerator*other.denominator+other.numerator * denominator;
-            int new_denominator=denominator*other.denominator;
+            std::cout << "Move assignment called\n";
 
-            return Rational(new_numerator,new_denominator);
-        }
-        Rational operator-(const Rational& other) const
-        {
-            int new_numerator=numerator*other.denominator-other.numerator * denominator;
-            int new_denominator=denominator*other.denominator;
-
-            return Rational(new_numerator, new_denominator);
-        }
-        Rational operator*(const Rational& other) const
-        {
-            int new_numerator=numerator*other.numerator;
-            int new_denominator=denominator*other.denominator;
-
-            return Rational(new_numerator,new_denominator);
-        }
-        Rational operator/(const Rational& other) const
-        {
-            if (other.numerator==0)
+            if (this != &other)
             {
-                throw std::invalid_argument{"cannot divide by 0"};
+                delete[] coefficients;
+
+                degree=other.degree;
+                coefficients=other.coefficients;
+
+                other.coefficients=nullptr;
+                other.degree=0;
             }
-            
-            int new_numerator=numerator*other.denominator;
-            int new_denominator=denominator*other.numerator;
-
-            return Rational(new_numerator,new_denominator);
-        }
-        Rational& operator+=(const Rational& other)
-        {
-            *this=*this+other;
-
             return *this;
         }
-        Rational& operator-=(const Rational& other) 
+        
+        void set_coefficient(int power, double value)
         {
-            *this=*this-other;
-
-            return *this;
+            coefficients[power]=value;
         }
-        Rational& operator*=(const Rational& other)
+        ~Polynomial()
         {
-            *this=*this * other;
-
-            return *this;
-        }
-        Rational& operator/=(const Rational& other)
-        {
-            *this=*this / other;
-
-            return *this;
+            delete[] coefficients;
         }
 
-        friend ostream& operator<<(ostream& os, const Rational& r);
+        friend std::ostream& operator<<(std::ostream& os, const Polynomial& p);
 };
 
-ostream& operator<<(ostream& os, const Rational& r)
+std::ostream& operator<<(std::ostream& os, const Polynomial& p)
 {
-    os<<r.numerator<<"/"<<r.denominator;
+    for (int i=p.degree; i>=0;--i)
+    {
+        if (i==0)
+        {
+            os<<p.coefficients[i];
+        }
+        else if (i==1)
+        {
+            os<<p.coefficients[i]<<"x";
+        }
+        else
+        {
+            os<<p.coefficients[i]<<"x^"<<i;
+        }
+
+        if(i>0)
+        {
+            os<<"+";
+        }
+        
+    }
+
     return os;
+}
+
+Polynomial f(double c2, double c1, double c0)
+{
+    Polynomial p{2};
+
+    p.set_coefficient(2,c2);
+    p.set_coefficient(1,c1);
+    p.set_coefficient(0,c0);
+
+    return p;
 }
 
 int main()
 {
-    Rational a{1, 2};
-    Rational b{1, 3};
-    Rational c{2};   // int -> Rational 암묵적 변환 확인
+    Polynomial p{2};
 
-    cout << "a = " << a << '\n';
-    cout << "b = " << b << '\n';
-    cout << "c = " << c << '\n';
+    p=f(3.0,2.0,1.0);
 
-    cout << "a + b = " << a + b << '\n';
-    cout << "a - b = " << a - b << '\n';
-    cout << "a * b = " << a * b << '\n';
-    cout << "a / b = " << a / b << '\n';
-
-    a += b;
-    cout << "after a += b, a = " << a << '\n';
-
-    a -= b;
-    cout << "after a -= b, a = " << a << '\n';
-
-    a *= b;
-    cout << "after a *= b, a = " << a << '\n';
-
-    a /= b;
-    cout << "after a /= b, a = " << a << '\n';
+    std::cout<<p<<'\n';
 }
 
 
@@ -180,6 +157,164 @@ std::cout << p;
 Example:
 3x^2 + 2x + 1
 
-2)
 
+
+2)
+- TOPIC: Rational class practice
+
+- Store numerator and denominator as int.
+
+int numerator;
+int denominator;
+
+- One int can be implicitly converted to Rational.
+
+Rational(int n, int d = 1);
+
+Rational r{3};
+-> 3/1
+
+
+- normalize() keeps Rational values in canonical form.
+
+Rules:
+- denominator > 0
+- numerator and denominator are reduced by gcd
+
+Example:
+6/8
+-> 3/4
+
+1/-2
+-> -1/2
+
+
+- Arithmetic operators return a new Rational.
+
+operator+
+operator-
+operator*
+operator/
+
+Example:
+a + b
+-> create new Rational
+-> constructor calls normalize()
+
+
+- Compound assignment operators modify the current object.
+
+Rational& operator+=(const Rational& other)
+{
+    *this = *this + other;
+    return *this;
+}
+
+Same pattern:
+-=, *=, /=
+
+
+- *this means the current Rational object.
+
+*this = *this + other;
+-> reuse operator+
+-> store the result back into the current object
+
+
+- Division by zero should throw an exception.
+
+if (other.numerator == 0)
+{
+    throw std::invalid_argument{"cannot divide by 0"};
+}
+
+
+- operator<< allows Rational objects to be printed.
+
+friend ostream& operator<<(ostream& os,
+                           const Rational& r);
+
+Example:
+cout << r;
+
+Output:
+1/2
+
+
+KEY IDEA:
+
+Rational
+-> always stored in normalized form
+
+basic operators
+-> return a new Rational
+
+compound assignment
+-> modify *this by reusing basic operators
+
+
+3)
+- TOPIC: Move assignment
+
+Polynomial& operator=(Polynomial&& other) noexcept
+{
+    if (this != &other)
+    {
+        delete[] coefficients;
+
+        degree = other.degree;
+        coefficients = other.coefficients;
+
+        other.degree = 0;
+        other.coefficients = nullptr;
+    }
+
+    return *this;
+}
+
+- Move assignment transfers ownership
+  of the dynamic array instead of copying it.
+
+- nullptr prevents double deletion.
+
+- A message can confirm that move assignment was called.
+
+
+4)
+- TOPIC: initializer_list constructor
+
+Polynomial(std::initializer_list<double> values)
+{
+    degree = static_cast<int>(values.size()) - 1;
+
+    coefficients = new double[values.size()];
+
+    int i{0};
+
+    for (double value : values)
+    {
+        coefficients[i] = value;
+        ++i;
+    }
+}
+
+- initializer_list receives multiple coefficients.
+
+Example:
+Polynomial p{1.0, 2.0, 3.0};
+
+-> 3 coefficients
+-> degree = 2
+
+- values.size() gives the number of values.
+- Each value is copied into coefficients[].
+
+
+KEY IDEA:
+
+move assignment
+-> transfer resource ownership
+
+initializer_list
+-> initialize an object from multiple values
 */

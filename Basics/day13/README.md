@@ -12,7 +12,8 @@ double* coefficients;
 
 ```cpp
 explicit Polynomial(int d)
-    : degree{d}, coefficients{new double[d + 1]{}}
+    : degree{d},
+      coefficients{new double[d + 1]{}}
 {
 }
 ```
@@ -25,7 +26,9 @@ void set_coefficient(int power, double value)
 {
     coefficients[power] = value;
 }
+```
 
+```cpp
 ~Polynomial()
 {
     delete[] coefficients;
@@ -34,6 +37,7 @@ void set_coefficient(int power, double value)
 
 - Memory created with `new[]` must be released with `delete[]`.
 - `operator<<` allows natural output with `std::cout << p`.
+- Coefficients are printed from the highest degree down to 0.
 
 Example:
 
@@ -63,20 +67,7 @@ Rational{3}
 
 ### Normalization
 
-```cpp
-void normalize()
-{
-    if (denominator < 0)
-    {
-        numerator = -numerator;
-        denominator = -denominator;
-    }
-
-    int g = std::gcd(numerator, denominator);
-    numerator /= g;
-    denominator /= g;
-}
-```
+`normalize()` keeps values in canonical form.
 
 Rules:
 
@@ -101,7 +92,9 @@ operator*
 operator/
 ```
 
-Each operator returns a new `Rational`. The constructor calls `normalize()`, so results are automatically reduced.
+Each operator returns a new `Rational`.
+
+The constructor calls `normalize()`, so arithmetic results are normalized automatically.
 
 ### Compound Assignment
 
@@ -116,9 +109,7 @@ Rational& operator+=(const Rational& other)
 Same pattern:
 
 ```text
--=  -> *this = *this - other
-*=  -> *this = *this * other
-/=  -> *this = *this / other
+-=, *=, /=
 ```
 
 - Existing arithmetic operators are reused.
@@ -126,14 +117,14 @@ Same pattern:
 
 ### Exceptions
 
+Division by zero should throw an exception.
+
 ```cpp
-if (denominator == 0)
+if (other.numerator == 0)
 {
-    throw std::invalid_argument{"denominator cannot be zero"};
+    throw std::invalid_argument{"cannot divide by 0"};
 }
 ```
-
-Division by a zero-valued rational must also be rejected.
 
 ### Output
 
@@ -148,13 +139,78 @@ Example:
 1/2
 ```
 
+---
+
+## 3. Move Assignment
+
+```cpp
+Polynomial& operator=(Polynomial&& other) noexcept
+{
+    if (this != &other)
+    {
+        delete[] coefficients;
+
+        degree = other.degree;
+        coefficients = other.coefficients;
+
+        other.degree = 0;
+        other.coefficients = nullptr;
+    }
+
+    return *this;
+}
+```
+
+- Move assignment transfers ownership of the dynamic array instead of copying it.
+- Setting the moved-from pointer to `nullptr` prevents double deletion.
+- A message inside the operator can confirm that move assignment was called.
+
+---
+
+## 4. `initializer_list` Constructor
+
+```cpp
+Polynomial(std::initializer_list<double> values)
+{
+    degree = static_cast<int>(values.size()) - 1;
+
+    coefficients = new double[values.size()];
+
+    int i{0};
+
+    for (double value : values)
+    {
+        coefficients[i] = value;
+        ++i;
+    }
+}
+```
+
+- `std::initializer_list` receives multiple coefficients.
+- The polynomial degree is derived from the number of coefficients.
+
+Example:
+
+```cpp
+Polynomial p{1.0, 2.0, 3.0};
+```
+
+```text
+3 coefficients
+-> degree = 2
+```
+
+- `values.size()` gives the number of values.
+- Each value is copied into `coefficients[]`.
+
 ## Key Idea
 
 ```text
 Polynomial
 -> dynamic coefficient storage
 -> new[] / delete[]
--> ostream output
+-> move assignment transfers resource ownership
+-> initializer_list builds the polynomial from coefficient values
 
 Rational
 -> normalized representation

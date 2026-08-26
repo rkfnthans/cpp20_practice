@@ -95,6 +95,8 @@ Records:
 - [x] Reference-qualified member functions
 - [x] Operator overloading design
 - [x] Comparison operators (`==`, `<=>`) — introductory practice
+- [x] Move assignment — introductory practice
+- [x] `std::initializer_list` constructor — introductory practice
 
 ## Learning Log
 
@@ -129,7 +131,6 @@ The program includes:
 
 This exercise is an important transition point between isolated syntax practice and object-oriented C++. Day 06 then reinforces the underlying fundamentals through targeted review and diagnostic exercises.
 
-
 ## Day 06 Milestone
 
 Day 06 reviews core language fundamentals through textbook exercises and direct compiler/runtime experiments.
@@ -150,7 +151,6 @@ The session includes:
 
 The session also reinforced the difference between compiler warnings, runtime behavior, and dedicated memory-leak diagnostics.
 
-
 ## Day 07 Milestone
 
 Day 07 introduces basic exception handling using *Do it! C++ Complete Guide*.
@@ -167,7 +167,6 @@ The session includes:
 
 The main exercise uses integer error codes with a single `catch(int error)` block to distinguish multiple error cases.
 
-
 ## Day 08 Milestone
 
 Day 08 begins introductory class and constructor practice using *Modern C++: Learn Only What You Need*.
@@ -181,8 +180,6 @@ The session includes:
 - default constructors,
 - object creation with and without constructor arguments,
 - and delegating constructors for reusing initialization logic.
-
-
 
 ## Day 09 Milestone
 
@@ -208,7 +205,6 @@ literal
 -> calculation in meters
 -> output in kilometers
 ```
-
 
 ## Day 10 Milestone
 
@@ -240,7 +236,6 @@ create GameWorld
 -> NPC is destroyed
 -> GameWorld is destroyed when its last owner disappears
 ```
-
 
 ## Day 11 Milestone
 
@@ -301,17 +296,21 @@ operator+
 -> type-system extension
 ```
 
-
 ## Day 13 Milestone
 
-Day 13 applies Chapter 2.8 concepts through two practice problems.
+Day 13 applies Chapter 2.8 concepts through `Polynomial` and `Rational` practice.
 
 ### Polynomial class
 - stores degree and dynamically allocated `double` coefficients,
 - uses `explicit` for the degree constructor,
 - allocates with `new[]` and releases with `delete[]`,
 - sets coefficients by exponent index,
-- overloads `operator<<` for output.
+- overloads `operator<<` for output,
+- practices move assignment by transferring ownership of the coefficient array,
+- resets the moved-from pointer to `nullptr` to prevent double deletion,
+- accepts coefficient lists through `std::initializer_list<double>`,
+- derives the degree from `values.size() - 1`,
+- copies each initializer-list value into the internal coefficient array.
 
 ### Rational class
 - stores numerator and denominator as `int`,

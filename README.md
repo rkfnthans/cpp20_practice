@@ -122,6 +122,8 @@ A topic is considered complete only when I can modify the code, predict the resu
 - [ ] Understand basic object lifetime
 - [x] Operator overloading design
 - [x] Comparison operators (`==`, `<=>`) — introductory practice
+- [x] Move assignment — introductory practice
+- [x] `std::initializer_list` constructor — introductory practice
 - [ ] Understand inheritance and virtual functions
 
 ### Stage 3 — Standard Library and Data Structures
@@ -181,7 +183,7 @@ The structure will be expanded gradually as the study progresses.
 
 **Current topic:** Day 13 — Chapter 2.8 practice problems
 
-**Current exercise:** Day 13 — Polynomial and Rational class practice
+**Current exercise:** Day 13 — Polynomial, Rational, move assignment, and initializer-list practice
 
 **Next milestone:** Continue Chapter 2.8 practice problems.
 
