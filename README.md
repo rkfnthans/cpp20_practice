@@ -179,11 +179,11 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 2 — Classes and Object-Oriented C++ (introductory)
 
-**Current topic:** Operator overloading design, comparison operators, and type-system extension
+**Current topic:** Day 13 — Chapter 2.8 practice problems
 
-**Current exercise:** Day 12 — Operator overloading design
+**Current exercise:** Day 13 — Polynomial and Rational class practice
 
-**Next milestone:** Continue modern C++ class design after operator overloading.
+**Next milestone:** Continue Chapter 2.8 practice problems.
 
 ## Learning Log
 
@@ -201,6 +201,7 @@ The structure will be expanded gradually as the study progresses.
 - [Day 10 — RAII, shared_ptr, and Custom Deleters](basics/day_10/)
 - [Day 11 — Member Access and Reference-Qualified Operators](basics/day_11/)
 - [Day 12 — Operator Overloading Design](basics/day_12/)
+- [Day 13 — Polynomial and Rational Practice](basics/day_13/)
 
 ## Long-Term Direction
 

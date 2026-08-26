@@ -110,6 +110,7 @@ Records:
 - [Day 10 — RAII, shared_ptr, and Custom Deleters](day_10/)
 - [Day 11 — Member Access and Reference-Qualified Operators](day_11/)
 - [Day 12 — Operator Overloading Design](day_12/)
+- [Day 13 — Polynomial and Rational Practice](day_13/)
 
 ## Day 05 Milestone
 
@@ -299,6 +300,27 @@ operator+
 -> operator<=>
 -> type-system extension
 ```
+
+
+## Day 13 Milestone
+
+Day 13 applies Chapter 2.8 concepts through two practice problems.
+
+### Polynomial class
+- stores degree and dynamically allocated `double` coefficients,
+- uses `explicit` for the degree constructor,
+- allocates with `new[]` and releases with `delete[]`,
+- sets coefficients by exponent index,
+- overloads `operator<<` for output.
+
+### Rational class
+- stores numerator and denominator as `int`,
+- allows one `int` to convert implicitly to `Rational`,
+- normalizes signs and reduces fractions with `std::gcd`,
+- overloads `+`, `-`, `*`, and `/`,
+- reuses them in `+=`, `-=`, `*=`, and `/=`,
+- throws exceptions for invalid zero-denominator/division cases,
+- overloads `operator<<`.
 
 ## Completion Criteria
 
