@@ -114,12 +114,14 @@ A topic is considered complete only when I can modify the code, predict the resu
 
 - [x] Define a class — introductory practice
 - [x] Use constructors — introductory practice
-- [ ] Understand `public` and `private`
+- [x] Understand `public` and `private`
 - [x] Write member functions — introductory practice
-- [ ] Write `const` member functions
+- [x] Write `const` member functions
 - [ ] Store objects in containers
 - [ ] Separate declarations and implementations
 - [ ] Understand basic object lifetime
+- [x] Operator overloading design
+- [x] Comparison operators (`==`, `<=>`) — introductory practice
 - [ ] Understand inheritance and virtual functions
 
 ### Stage 3 — Standard Library and Data Structures
@@ -177,11 +179,11 @@ The structure will be expanded gradually as the study progresses.
 
 **Current stage:** Stage 2 — Classes and Object-Oriented C++ (introductory)
 
-**Current topic:** Member access, subscript operators, const member functions, and reference-qualified member functions
+**Current topic:** Operator overloading design, comparison operators, and type-system extension
 
-**Current exercise:** Day 11 — Member access and reference-qualified operators
+**Current exercise:** Day 12 — Operator overloading design
 
-**Next milestone:** Continue class design and operator-overloading topics.
+**Next milestone:** Continue modern C++ class design after operator overloading.
 
 ## Learning Log
 
@@ -198,6 +200,7 @@ The structure will be expanded gradually as the study progresses.
 - [Day 09 — User-Defined Literals and Object Creation](basics/day_09/)
 - [Day 10 — RAII, shared_ptr, and Custom Deleters](basics/day_10/)
 - [Day 11 — Member Access and Reference-Qualified Operators](basics/day_11/)
+- [Day 12 — Operator Overloading Design](basics/day_12/)
 
 ## Long-Term Direction
 

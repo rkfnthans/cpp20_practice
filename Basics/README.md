@@ -90,6 +90,11 @@ Records:
 - [x] Classes and constructors — introductory practice
 - [x] Data members and member functions — introductory practice
 - [x] Default and delegating constructors — introductory practice
+- [x] Const member functions
+- [x] Member access by reference
+- [x] Reference-qualified member functions
+- [x] Operator overloading design
+- [x] Comparison operators (`==`, `<=>`) — introductory practice
 
 ## Learning Log
 
@@ -101,6 +106,10 @@ Records:
 - [Day 06 — C++ Fundamentals Review and Exercises](day_06/)
 - [Day 07 — Exception Handling](day_07/)
 - [Day 08 — Members and Constructors](day_08/)
+- [Day 09 — User-Defined Literals and Object Creation](day_09/)
+- [Day 10 — RAII, shared_ptr, and Custom Deleters](day_10/)
+- [Day 11 — Member Access and Reference-Qualified Operators](day_11/)
+- [Day 12 — Operator Overloading Design](day_12/)
 
 ## Day 05 Milestone
 
@@ -259,6 +268,36 @@ member access
 -> temporary-object lifetime
 -> ref-qualified member functions
 -> safe lvalue/rvalue behavior
+```
+
+## Day 12 Milestone
+
+Day 12 focuses on operator overloading design, comparison operators, and type-system extension.
+
+The session includes:
+
+- designing `operator+` to create and return a new result,
+- designing `operator+=` to modify the left-hand object,
+- understanding `*this` as the current object,
+- using `explicit` constructors to prevent unintended implicit conversion,
+- preserving the original precedence and associativity of overloaded operators,
+- comparing member-operator and free-function designs,
+- using defaulted `operator==`,
+- using the C++20 spaceship operator `<=>`,
+- and extending the type system with meaningful user-defined operations.
+
+The conceptual flow is:
+
+```text
+operator+
+-> operator+=
+-> *this
+-> explicit constructor
+-> precedence / associativity
+-> member vs free operator
+-> operator==
+-> operator<=>
+-> type-system extension
 ```
 
 ## Completion Criteria
