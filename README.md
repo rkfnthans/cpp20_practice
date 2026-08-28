@@ -558,14 +558,14 @@ Completed introductory topics include:
 
 **Current chapter:** Array
 
-**Problems solved:** 1
+**Problems solved:** 2
 
-**Latest problem:** 배열 정렬하기
+**Latest problem:** 배열 제어하기
 
 **Latest source file:**
 
 ```text
-coding_test/books/programmers/01_array/p01_sort_array.cpp
+coding_test/books/programmers/01_array/p02_array_control.cpp
 ```
 
 ---

@@ -10,33 +10,21 @@ Problems are organized by the book's chapter/topic order.
 programmers/
 ├── README.md
 ├── 01_array/
-│   └── p01_sort_array.cpp
+│   ├── p01_sort_array.cpp
+│   └── p02_array_control.cpp
 ├── 02_stack/
 ├── 03_queue/
 └── ...
 ```
 
-Chapter folder names should preserve the order and topic structure of the book.
-
-Examples:
-
-```text
-01_array/
-02_stack/
-03_queue/
-```
-
-If one chapter combines multiple topics, use a combined folder name such as:
-
-```text
-02_stack_queue/
-```
+Chapter folder names preserve the order and topic structure of the book.
 
 ## Progress
 
 | No. | Date | Chapter | Problem | Topic | Status |
 |---:|---|---|---|---|---|
 | 1 | 2026-08-27 | Array | 배열 정렬하기 | Array / Sorting | Solved |
+| 2 | 2026-08-28 | Array | 배열 제어하기 | Sorting / Unique / Erase | Hint |
 
 ## Status
 
@@ -53,10 +41,11 @@ Problem source files use:
 pNN_short_name.cpp
 ```
 
-Example:
+Examples:
 
 ```text
 p01_sort_array.cpp
+p02_array_control.cpp
 ```
 
 Use concise English `snake_case` names.
@@ -67,7 +56,7 @@ Every problem keeps its `.cpp` source file.
 
 A separate problem note is **not** required for every problem.
 
-Create a matching `.md` file only when:
+Create a matching `.md` file when:
 
 - a new algorithm or data structure was learned,
 - a hint was needed,
@@ -75,13 +64,6 @@ Create a matching `.md` file only when:
 - there were multiple incorrect attempts,
 - another solution is worth comparing,
 - or the problem should be reviewed later.
-
-Example:
-
-```text
-p05_some_problem.cpp
-p05_some_problem.md
-```
 
 For straightforward problems that are understood and solved independently:
 
@@ -96,10 +78,24 @@ is enough.
 
 **Current chapter:** Array
 
-**Latest problem:** 배열 정렬하기
+**Problems completed:** 2
+
+**Latest problem:** 배열 제어하기
 
 **Latest file:**
 
 ```text
-01_array/p01_sort_array.cpp
+01_array/p02_array_control.cpp
 ```
+
+### Concepts encountered so far
+
+- `std::vector`
+- `std::sort`
+- custom sort order
+- `std::greater<int>`
+- comparator functions
+- `std::unique`
+- `vector::erase`
+- basic time-complexity reasoning
+- basic space-complexity reasoning
