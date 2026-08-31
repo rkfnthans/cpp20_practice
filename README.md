@@ -184,8 +184,10 @@ Be able to choose and use standard-library containers and algorithms without rei
 - [ ] `unique_ptr` in class ownership
 - [ ] `shared_ptr` ownership trade-offs
 - [ ] `weak_ptr`
-- [ ] Basic templates
-- [ ] Function templates
+- [x] Basic templates — introductory practice
+- [x] Function templates — introductory practice
+- [x] Forwarding references — introductory practice
+- [x] Perfect forwarding — introductory practice
 - [ ] Class templates
 - [ ] Lambda expressions
 - [ ] Error handling design
@@ -467,6 +469,9 @@ cpp20_practice/
 ├── classes/
 ├── stl/
 ├── modern_cpp/
+│   ├── README.md
+│   └── day_14/
+│       └── README.md
 │
 ├── coding_test/
 │   ├── README.md
@@ -525,13 +530,13 @@ The purpose of coding-test practice is problem solving, not excessive documentat
 
 ## Modern C++
 
-**Current stage:** Stage 2 — Classes and Object-Oriented C++ (introductory)
+**Current stage:** Stage 4 — Modern C++ Foundations (introductory)
 
-**Current topic:** Day 13 — Chapter 2.8 practice problems
+**Current topic:** Day 14 — Function templates and parameter deduction
 
-**Current exercise:** Polynomial, Rational, move assignment, and initializer-list practice
+**Current exercise:** Value/reference parameters, forwarding references, perfect forwarding, and ordinary rvalue references
 
-**Next milestone:** Continue Chapter 2.8 practice problems.
+**Next milestone:** Continue function-template deduction and related template rules.
 
 Completed introductory topics include:
 
@@ -550,7 +555,12 @@ Completed introductory topics include:
 - comparison operators,
 - RAII and smart-pointer review,
 - move assignment,
-- and `std::initializer_list` constructor practice.
+- `std::initializer_list` constructor practice,
+- basic function templates,
+- function-template parameter deduction,
+- forwarding references and reference collapsing,
+- perfect forwarding with `std::forward`,
+- and ordinary rvalue references.
 
 ## Coding Test
 
@@ -558,23 +568,23 @@ Completed introductory topics include:
 
 **Current chapter:** Array
 
-**Problems solved:** 2
+**Problems solved:** 1
 
-**Latest problem:** 배열 제어하기
+**Latest problem:** 배열 정렬하기
 
 **Latest source file:**
 
 ```text
-coding_test/books/programmers/01_array/p02_array_control.cpp
+coding_test/books/programmers/01_array/p01_sort_array.cpp
 ```
 
 ---
 
 # Study Records
 
-Detailed Modern C++ Day logs remain in their respective study directories.
+Detailed study logs are split by learning stage.
 
-Current learning log:
+### Basics
 
 - Day 01 — First C++20 Practice Session
 - Day 02 — File, Stream, and Filesystem Practice
@@ -589,6 +599,10 @@ Current learning log:
 - Day 11 — Member Access and Reference-Qualified Operators
 - Day 12 — Operator Overloading Design
 - Day 13 — Polynomial and Rational Practice
+
+### Modern C++
+
+- [Day 14 — Function Templates and Forwarding References](modern_cpp/day_14/)
 
 Coding-test progress is maintained separately in:
 
