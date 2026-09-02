@@ -188,6 +188,14 @@ Be able to choose and use standard-library containers and algorithms without rei
 - [x] Function templates — introductory practice
 - [x] Forwarding references — introductory practice
 - [x] Perfect forwarding — introductory practice
+- [x] Template instantiation errors — introductory practice
+- [x] Mixed-type template parameters — introductory practice
+- [x] Uniform initialization — review
+- [x] Return type deduction with `auto` — introductory practice
+- [x] Abbreviated function templates — introductory practice
+- [x] Namespaces and basic name lookup — introductory practice
+- [x] Namespace aliases — introductory practice
+- [x] Argument-dependent lookup (ADL) — introductory practice
 - [ ] Class templates
 - [ ] Lambda expressions
 - [ ] Error handling design
@@ -532,11 +540,11 @@ The purpose of coding-test practice is problem solving, not excessive documentat
 
 **Current stage:** Stage 4 — Modern C++ Foundations (introductory)
 
-**Current topic:** Day 14 — Function templates and parameter deduction
+**Current topic:** Day 15 — Templates, namespaces, and argument-dependent lookup
 
-**Current exercise:** Value/reference parameters, forwarding references, perfect forwarding, and ordinary rvalue references
+**Current exercise:** Template error handling, mixed types, abbreviated templates, namespace lookup, and ADL
 
-**Next milestone:** Continue function-template deduction and related template rules.
+**Next milestone:** Continue the next modern C++ language topic and reinforce function lookup rules through practice.
 
 Completed introductory topics include:
 
@@ -559,6 +567,11 @@ Completed introductory topics include:
 - basic function templates,
 - function-template parameter deduction,
 - forwarding references and reference collapsing,
+- template instantiation errors and mixed-type deduction,
+- uniform initialization and return type deduction,
+- C++20 abbreviated function templates,
+- namespaces, aliases, and name lookup,
+- argument-dependent lookup (ADL),
 - perfect forwarding with `std::forward`,
 - and ordinary rvalue references.
 
@@ -603,6 +616,7 @@ Detailed study logs are split by learning stage.
 ### Modern C++
 
 - [Day 14 — Function Templates and Forwarding References](modern_cpp/day_14/)
+- [Day 15 — Templates, Namespaces, and ADL](modern_cpp/day_15/)
 
 Coding-test progress is maintained separately in:
 
